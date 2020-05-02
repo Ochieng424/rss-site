@@ -2,7 +2,7 @@
     <div class="container-fluid p-0 m-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <router-link to="/" class="navbar-brand">Job-app</router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">

@@ -29,4 +29,21 @@ class AuthTest extends TestCase
 
         User::where('email','test@gmail.com')->delete();
     }
+
+    public function testLogin(){
+        User::create([
+            'email' => 'test@gmail.com',
+            'name' => 'Test',
+            'role' => 'user',
+            'password' => bcrypt('secret1234'),
+        ]);
+
+        $data = [
+            'email' => 'test@gmail.com',
+            'password' => 'secret1234',
+        ];
+
+        $response = $this->json('POST','/api/v1/auth/login', $data);
+        $response->assertStatus(200);
+    }
 }

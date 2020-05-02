@@ -43349,11 +43349,11 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "col-lg-6" }, [
-          _c("h1", [_vm._v("Product Crud")]),
+          _c("h1", [_vm._v("Job-app")]),
           _vm._v(" "),
           _c("p", { staticClass: "lead mt-5 mb-8" }, [
             _vm._v(
-              "\n                All about creating, updating, deleting and searching through products data.\n            "
+              "\n                Kick start your career by securing your dream job.\n            "
             )
           ]),
           _vm._v(" "),
@@ -43420,144 +43420,154 @@ var render = function() {
       "nav",
       { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
       [
-        _c("div", { staticClass: "container" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-            _vm._v("Navbar")
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse",
-              attrs: { id: "navbarSupportedContent" }
-            },
-            [
-              _c("ul", { staticClass: "navbar-nav mr-auto" }, [
-                _c(
-                  "li",
-                  { staticClass: "nav-item active" },
-                  [
-                    _c(
-                      "router-link",
-                      { staticClass: "nav-link", attrs: { to: "/" } },
-                      [_vm._v("Home")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm._m(1)
-              ]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-                _vm.$auth.check()
-                  ? _c("li", { staticClass: "nav-item dropdown" }, [
+        _c(
+          "div",
+          { staticClass: "container" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand", attrs: { to: "/" } },
+              [_vm._v("Job-app")]
+            ),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "collapse navbar-collapse",
+                attrs: { id: "navbarSupportedContent" }
+              },
+              [
+                _c("ul", { staticClass: "navbar-nav mr-auto" }, [
+                  _c(
+                    "li",
+                    { staticClass: "nav-item active" },
+                    [
                       _c(
-                        "a",
-                        {
-                          staticClass: "nav-link dropdown-toggle",
-                          attrs: {
-                            href: "#",
-                            id: "navbarDropdown",
-                            role: "button",
-                            "data-toggle": "dropdown",
-                            "aria-haspopup": "true",
-                            "aria-expanded": "false"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(_vm.$auth.user().name) +
-                              "\n                        "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "dropdown-menu",
-                          attrs: { "aria-labelledby": "navbarDropdown" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "dropdown-item",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("Profile")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "dropdown-item",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("My Applications")]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "dropdown-divider" }),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "dropdown-item",
-                              attrs: { href: "#" },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.$auth.logout()
-                                }
-                              }
-                            },
-                            [_vm._v("Logout")]
-                          )
-                        ]
+                        "router-link",
+                        { staticClass: "nav-link", attrs: { to: "/" } },
+                        [_vm._v("Home")]
                       )
-                    ])
-                  : _vm._e(),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ]),
                 _vm._v(" "),
-                !_vm.$auth.check()
-                  ? _c(
-                      "li",
-                      { staticClass: "nav-item" },
-                      [
+                _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+                  _vm.$auth.check()
+                    ? _c("li", { staticClass: "nav-item dropdown" }, [
                         _c(
-                          "router-link",
-                          { staticClass: "nav-link", attrs: { to: "/login" } },
-                          [_vm._v("Log in")]
-                        )
-                      ],
-                      1
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.$auth.check()
-                  ? _c(
-                      "li",
-                      { staticClass: "nav-item" },
-                      [
-                        _c(
-                          "router-link",
+                          "a",
                           {
-                            staticClass: "nav-link",
-                            attrs: { to: "/register" }
+                            staticClass: "nav-link dropdown-toggle",
+                            attrs: {
+                              href: "#",
+                              id: "navbarDropdown",
+                              role: "button",
+                              "data-toggle": "dropdown",
+                              "aria-haspopup": "true",
+                              "aria-expanded": "false"
+                            }
                           },
-                          [_vm._v("Register")]
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(_vm.$auth.user().name) +
+                                "\n                        "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "dropdown-menu",
+                            attrs: { "aria-labelledby": "navbarDropdown" }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
+                                attrs: { href: "#" }
+                              },
+                              [_vm._v("Profile")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
+                                attrs: { href: "#" }
+                              },
+                              [_vm._v("My Applications")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.$auth.logout()
+                                  }
+                                }
+                              },
+                              [_vm._v("Logout")]
+                            )
+                          ]
                         )
-                      ],
-                      1
-                    )
-                  : _vm._e()
-              ])
-            ]
-          )
-        ])
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  !_vm.$auth.check()
+                    ? _c(
+                        "li",
+                        { staticClass: "nav-item" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "nav-link",
+                              attrs: { to: "/login" }
+                            },
+                            [_vm._v("Log in")]
+                          )
+                        ],
+                        1
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  !_vm.$auth.check()
+                    ? _c(
+                        "li",
+                        { staticClass: "nav-item" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "nav-link",
+                              attrs: { to: "/register" }
+                            },
+                            [_vm._v("Register")]
+                          )
+                        ],
+                        1
+                      )
+                    : _vm._e()
+                ])
+              ]
+            )
+          ],
+          1
+        )
       ]
     )
   ])

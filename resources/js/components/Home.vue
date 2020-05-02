@@ -3,9 +3,9 @@
         <div class="row align-items-center" style="padding-top: 80px">
 
             <div class="col-lg-6">
-                <h1>Product Crud</h1>
+                <h1>Job-app</h1>
                 <p class="lead mt-5 mb-8">
-                    All about creating, updating, deleting and searching through products data.
+                    Kick start your career by securing your dream job.
                 </p>
                 <p>
                     <router-link :to="{path: '/register'}">
