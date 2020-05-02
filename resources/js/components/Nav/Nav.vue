@@ -19,22 +19,22 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" v-if="$auth.check()">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
+                                {{$auth.user().name}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">My Applications</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#" @click.prevent="$auth.logout()">Logout</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Log in</a>
+                        <li class="nav-item" v-if="!$auth.check()">
+                            <router-link to="/login" class="nav-link">Log in</router-link>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" v-if="!$auth.check()">
                             <router-link to="/register" class="nav-link">Register</router-link>
                         </li>
                     </ul>

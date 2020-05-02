@@ -44,6 +44,12 @@ let routes = [
             auth: false
         }
     },
+    {
+        path: '/login', component: require('./components/Auth/Login.vue').default, meta: {
+            plainLayout: 1,
+            auth: false
+        }
+    },
 ];
 
 const router = new VueRouter({
