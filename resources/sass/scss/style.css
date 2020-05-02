@@ -1,0 +1,2025 @@
+/*>=======================
+	01. Start Default css
+=========================<*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800|Rubik:400,500,700&amp;display=swap');
+
+html{
+	font-size: 100%;
+	overflow-x: hidden;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	/*color: #fff;*/
+	text-decoration: none;
+}
+a:hover,
+a:focus{
+	color: blue;
+	text-decoration: none;
+	outline: none;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Poppins', sans-serif;
+	color: #04040d;
+	margin: 0;
+	padding: 0;
+}
+h1{
+	font-size: 64px;
+	font-weight: bold;
+}
+h2{
+	font-size: 48px;
+	font-weight: bold;
+}
+h3{
+	font-size: 30px;
+	font-weight: 500;
+}
+h4{
+	font-size: 24px;
+	font-weight: 500;
+}
+h5{
+	font-size: 18px;
+	font-weight: 500;
+}
+h6{
+	font-size: 16px;
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+input,
+select,
+textarea{
+	border: none;
+	outline: none;
+}
+button{
+	border: none;
+	cursor: pointer;
+}
+button,
+button:hover,
+button:focus{
+	outline: none;
+}
+body{
+	font-family: 'Rubik', sans-serif;
+	font-size: 16px;
+	line-height: 26px;
+	color: #7a7d8a;
+	overflow-x: hidden;
+}
+.section_padding{
+	padding: 120px 0;
+}
+.dark_bg{
+	background-color: #04040d;
+}
+.section_title{
+	margin-top: -7px;
+	margin-bottom: 60px;
+}
+.section_title h2{
+	color: #04040d;
+}
+.dark_title h2{
+	color: #fff;
+	position: relative;
+}
+.section_title h2:after{
+	display: block;
+	content: '';
+	width: 100px;
+  	height: 5px;
+  	background-color: blue;
+  	margin: 18px auto 0;
+}
+.content_title h2{
+	position: relative;
+	color: #fff;
+}
+.content_title h2:after{
+	display: block;
+	content: '';
+	width: 100px;
+  	height: 5px;
+  	background-color: blue;
+  	margin: 15px 0;
+}
+.diggital_btn{
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #fff;
+    background-color: blue;
+    line-height: 53px;
+    height: 50px;
+    width: 180px;
+    text-transform: capitalize;
+    text-align: center;
+    transition: all .5s;
+}
+.diggital_btn:hover,
+.diggital_btn:focus{
+	background-color: blue;
+	color: #fff;
+}
+.diggital_overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #04040d;
+	opacity: .7;
+}
+.bg_image{
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+@media (min-width: 1200px){
+	.container {
+	    max-width: 1200px;
+	}
+}
+/*>=======================
+	End Default css
+=========================<*/
+/*>============================
+	02. Start preloader_area css
+==============================<*/
+.preloader_area{
+	background: #fff;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	z-index: 11000;
+}
+.spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 50px;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	font-size: 10px;
+}
+.spinner > div {
+	background-color: #04040d;
+	height: 100%;
+	width: 6px;
+	display: inline-block;
+	-webkit-animation: animateline 1.2s infinite ease-in-out;
+	animation: animateline 1.2s infinite ease-in-out;
+}
+.spinner .line2 {
+  	-webkit-animation-delay: -1.1s;
+  	animation-delay: -1.1s;
+}
+.spinner .line3 {
+  	-webkit-animation-delay: -1.0s;
+  	animation-delay: -1.0s;
+}
+.spinner .line4 {
+  	-webkit-animation-delay: -0.9s;
+  	animation-delay: -0.9s;
+}
+.spinner .line5 {
+  	-webkit-animation-delay: -0.8s;
+  	animation-delay: -0.8s;
+}
+.spinner .line6 {
+  	-webkit-animation-delay: -0.7s;
+  	animation-delay: -0.7s;
+}
+.spinner .line7 {
+  	-webkit-animation-delay: -0.6s;
+  	animation-delay: -0.6s;
+}
+@-webkit-keyframes animateline {
+  	0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  	20% { -webkit-transform: scaleY(1.0) }
+}
+@keyframes animateline {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+/*>============================
+	Start preloader_area css
+==============================<*/
+
+/*>============================
+	03. Start header_area css
+===============================<*/
+.transparent_header{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 337;
+	border-bottom: 1px solid #f3f3f3;
+}
+.sticky.header_area{
+	background-color: #04040d;
+	border-color: #04040d;
+}
+.sticky.header_area_2{
+	background-color: #fff;
+	box-shadow: 0 0 20px #f3f3f3;
+}
+header.sticky{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 337;
+}
+.site_menu{
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.diggital_menu{
+	float: right
+}
+.diggital_menu .main_menu ul li{
+	display: inline-block;
+	position: relative;
+	margin-left: 40px;
+}
+.diggital_menu .main_menu ul li a{
+	position: relative;
+	display: block;
+	padding: 42px 0px 42px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 400;
+	text-transform: capitalize;
+	-webkit-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+.diggital_menu .main_menu ul li:hover > a{
+	color: blue;
+}
+.diggital_menu .main_menu ul li > ul.sub_menu{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: blue;
+	border-bottom: 5px solid blue;
+	-webkit-transform: scale(1,0);
+	-ms-transform: scale(1,0);
+	transform: scale(1,0);
+	-webkit-transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+	width: 200px;
+	text-align: left;
+	padding:  15px 0;
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.diggital_menu .main_menu ul li:hover > ul.sub_menu{
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	top: 100%;
+	visibility: visible;
+	opacity: 1;
+}
+.main_menu ul li > ul.sub_menu li{
+	display: block;
+	margin: 0;
+}
+.diggital_menu .main_menu ul li > ul.sub_menu li > a{
+	padding: 5px 35px;
+	color: #fff;
+	font-size: 14px;
+	text-transform: capitalize;
+	transition: all .5s;
+}
+.diggital_menu .main_menu ul li > ul.sub_menu li:hover > a{
+	color: #fff;
+	padding-left: 40px;
+}
+.main_menu ul li ul.sub_menu li > ul.sub_menu{
+	top: 0;
+	left: 100%;
+	opacity: 0;
+	visibility: hidden;
+}
+.main_menu ul li ul.sub_menu li:hover > ul.sub_menu{
+	visibility: visible;
+	opacity: 1;
+}
+
+/*sidebar_menu*/
+.mobile_wrapper{
+	display: none;
+	padding: 15px 0;
+}
+.menu_button {
+    float: right;
+}
+.menu_button .menu_icon{
+	cursor: pointer;
+}
+.menu_button .menu_icon span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    margin: 4px 0 2px;
+    transition: all .5s;
+}
+.menu_button .menu_icon.active span:nth-child(1){
+	transform: rotate(45deg) translateY(5px);
+}
+.menu_button .menu_icon.active span:nth-child(3){
+	transform: rotate(-45deg) translateY(-5px);
+}
+.menu_button .menu_icon.active span:nth-child(2){
+	display: none;
+}
+.sidenav_menu{
+	overflow: hidden;
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 50px 20px;
+    z-index: 9999;
+    background: #ffffff;
+    overflow: auto;
+	transform: translateX(-100%);
+	-webkit-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+	-webkit-transition: -webkit-transform 0.6s ease;
+	transition: transform 0.6s ease;
+}
+.sidenav_menu.active{
+  	transform: translateX(0);
+  	-webkit-transform: translateX(0);
+  	-ms-transform: translateX(0);
+  	transform: translateX(0);
+}
+.sidebar-menu > li > a{
+	text-transform: capitalize;
+	color: #04040d;
+	border: none;
+}
+.sidebar-menu li > a > .fa-angle-down {
+    color: #04040d;
+    margin-top: 5px;
+}
+.sidebar-menu > li.active a .fa-angle-down{
+	color: #04040d;
+	transition: all .1s;
+}
+.sidebar-menu > li:hover > a,
+.sidebar-menu > li.active > a {
+    color: blue;
+    background: #fff;
+    border: none;
+}
+.sidebar-menu .sidebar-submenu {
+    padding-left: 15px;
+    background: #fff;
+}
+.sidebar-menu .sidebar-submenu > li > a {
+    color: #04040d;
+    text-transform: capitalize;
+}
+.sidenav_menu .site_logo{
+	padding: 0 20px;
+	margin-bottom: 40px;
+}
+.close_icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.close_icon .close_btn{
+	cursor: pointer;
+}
+.close_icon .close_btn i{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #04040d;
+	color: #fff;
+	font-size: 16px;
+}
+/*>======================
+	End header_area css
+=========================<*/
+
+/*>======================================
+	04. Start header_banner section css
+========================================<*/
+.header_banner_1{
+	position: relative;
+	padding: 285px 0 180px;
+	background-color: #04040d;
+}
+.welcome_content{
+	position: relative;
+	z-index: 1;
+}
+.welcome_content span{
+	position: relative;
+	font-weight: 500;
+	color: blue;
+	letter-spacing: 2px;
+	margin-bottom: 21px;
+	display: block;
+}
+.welcome_content span:before {
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 2px;
+    background-color: blue;
+    margin-bottom: 4px;
+    margin-right: 20px;
+}
+.welcome_content h1{
+	color: #fff;
+	font-size: 60px;
+	font-weight: 800;
+	margin-bottom: 35px;
+}
+.welcome_content p{
+	color: #fff;
+	margin-bottom: 56px;
+}
+.shamko_img_box{
+	position: relative;
+}
+/*>===============================
+	End header_banner section css
+==================================<*/
+
+/*>======================================
+	05. Start diggital_about section css
+========================================<*/
+.diggital_about_1 .diggital_content_box {
+    margin-top: -2px;
+}
+.diggital_about .diggital_content_box h2{
+	color: #01040a;
+}
+.diggital_about .diggital_content_box h2:after{
+    display: block;
+    content: '';
+    width: 100px;
+    height: 5px;
+    background-color: blue;
+    margin-top: 18px;
+    margin-bottom: 33px;
+}
+.diggital_about_1 .diggital_content_box h2:after{
+	margin-top: 31px;
+}
+.diggital_about_1 .counter_area{
+	margin-top: 41px;
+	margin-bottom: 32px;
+}
+.diggital_about_1 .counter_box:hover .counter_info i,
+.diggital_about_1 .counter_box:hover .counter_info h3{
+	color: blue;
+}
+.diggital_about_1 .counter_box .counter_info i{
+	display: block;
+	font-size: 60px;
+	color: #04040d;
+	margin-bottom: 38px;
+	margin-top: 14px;
+}
+.diggital_about_1 .counter_box .counter_info h3{
+	color: #04040d;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+/*>===============================
+	End diggital_about section css
+==================================<*/
+
+/*>==========================================
+	06. Start diggital_what_we section css
+=============================================<*/
+.diggital_what_we_1 .grid_inner_item {
+	display: flex;
+	border: 1px solid blue;
+	padding: 40px 30px 36px;
+	transition: all .5s;
+}
+.diggital_what_we_1 .grid_inner_item:hover{
+	background-color: blue;
+}
+.diggital_what_we_1 .grid_inner_item .diggital_icon i{
+	display: block;
+    font-size: 40px;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    margin-top: 8px;
+}
+.diggital_what_we_1 .grid_inner_item .diggital_info{
+	margin-left: 30px;
+}
+.diggital_what_we_1 .grid_inner_item .diggital_info h4{
+	color: #fff;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+.diggital_what_we_1 .grid_inner_item .diggital_info p{
+	color: #ffffff;
+}
+/*>=======================================
+	End diggital_what_we section css
+==========================================<*/
+
+/*>=======================================
+	07. Start diggital_service_1 section css
+==========================================<*/
+.diggital_service_1{
+	margin-bottom: -60px;
+}
+.diggital_service_1 .section_title h2:after{
+	margin-top: 30px;
+}
+.diggital_service_1 .grid_inner_item{
+	text-align: center;
+	margin-bottom: 60px;
+	padding: 41px 30px 30px;
+	border: 1px solid #f3f3f3;
+	transition: all .5s;
+}
+.diggital_service_1 .grid_item:hover .grid_inner_item{
+	box-shadow: 0px 3px 20px 0px rgba(76, 76, 76, 0.15);
+	border-color: #fff;
+}
+.diggital_service_1 .grid_inner_item .diggital_icon i{
+	display: block;
+	font-size: 32px;
+	margin-bottom: 30px;
+	color: blue;
+}
+.diggital_service_1 .grid_inner_item .diggital_info h4{
+	margin-bottom: 23px;
+	font-weight: 600;
+}
+/*>=======================================
+	End diggital_service_1 section css
+==========================================<*/
+
+/*>=======================================
+	08. Start diggital_work section css
+========================================<*/
+.diggital_work  .section_title{
+	margin-top: -9px;
+}
+.diggital_work .masonry_grid .grid_item:hover .overlay_img{
+	transform: translateX(0%);
+}
+.diggital_work .masonry_grid .grid_item:hover .overlay_content{
+	left: 50%;
+}
+.diggital_work .grid_inner_item{
+	margin-bottom: 40px;
+}
+.diggital_work .masonry_grid .diggital_img{
+	position: relative;
+	overflow: hidden;
+}
+.diggital_work .masonry_grid .diggital_img .overlay_img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateX(-100%);
+	width: 100%;
+	height: 100%;
+	opacity: .8;
+	background-color: blue;
+	transition: all .5s;
+}
+.diggital_work .masonry_grid .overlay_content {
+    position: absolute;
+    text-align: center;
+    left: -100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    transition: all .5s;
+}
+.diggital_work .masonry_grid .overlay_content h4{
+	margin-bottom: 10px;
+}
+.diggital_work .masonry_grid .overlay_content h4,
+.diggital_work .masonry_grid .overlay_content p{
+	color: #fff;
+}
+/*>===============================
+	End diggital_work section css
+==================================<*/
+
+/*>===================================
+	09. Start diggital_team section css
+======================================<*/
+.case_study_1,
+.diggital_team_1 {
+    padding: 120px 0 132px;
+}
+.diggital_team_1 .section_title{
+	margin-top: -10px;
+}
+.diggital_team_1 .team_slider{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.diggital_team_1 .team_slider .grid_item:hover .grid_inner_item .overlay_img{
+	visibility: visible;
+	opacity: 1;
+}
+.diggital_team_1 .team_slider .grid_item:hover .grid_inner_item .overlay_content{
+	bottom: 35px;
+}
+.diggital_team_1 .team_slider .grid_inner_item {
+	margin-left: 15px;
+	margin-right: 15px;
+	outline: none;
+	margin-bottom: 75px;
+}
+.diggital_team_1 .team_slider .grid_inner_item .diggital_img{
+	position: relative;
+	overflow: hidden;
+}
+.diggital_team_1 .team_slider .grid_inner_item .overlay_img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	background: -moz-linear-gradient( 90deg, rgb(0, 26, 255) 0%, rgba(27, 16, 255, 0.34) 66%, rgba(255,255,255,0) 100%);
+	background: -webkit-linear-gradient( 90deg, rgb(0, 26, 255) 0%, rgba(46, 41, 255, 0.34) 66%, rgba(255,255,255,0) 100%);
+	background: -ms-linear-gradient( 90deg, rgb(0, 26, 255) 0%, rgba(27, 16, 255, 0.34) 66%, rgba(255,255,255,0) 100%);
+	transition: all .5s;
+	opacity: 0;
+}
+.diggital_team_1 .team_slider .grid_inner_item .overlay_content{
+	position: absolute;
+	bottom: -100%;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%, 0);
+	text-align: center;
+	transition: all .5s;
+}
+.diggital_team_1 .team_slider .grid_inner_item .overlay_content h4{
+	color: #fff;
+	margin-bottom: 7px;
+}
+.diggital_team_1 .team_slider .grid_inner_item .overlay_content p{
+	color: #fff;
+	margin-bottom: 9px;
+}
+.diggital_team_1 .team_slider .grid_inner_item .overlay_content ul.social_link li{
+	display: inline-block;
+	margin-left: 7.5px;
+	margin-right: 7.5px;
+}
+.diggital_team_1 .team_slider .grid_inner_item .overlay_content ul.social_link li a{
+	color: #fff;
+}
+.diggital_team_1 .team_slider .slick-dots{
+	bottom: 0;
+}
+.diggital_team_1 .team_slider .slick-dots li{
+	margin-left: 7.5px;
+	margin-right: 7.5px;
+}
+.diggital_team_1 .team_slider .slick-dots li button{
+	width: 10px;
+	height: 10px;
+	background-color: blue;
+	border-radius: 50%;
+	transition: all .3s;
+}
+.diggital_team_1 .team_slider .slick-dots li.slick-active button{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+}
+/*>===================================
+	End diggital_team section css
+======================================<*/
+
+/*>============================================
+	10. Start diggital_testimonial section css
+=============================================<*/
+.diggital_testimonial_1 {
+    padding-bottom: 105px;
+}
+.diggital_testimonial_1 .section_title h2:after{
+	margin-top: 31px;
+}
+.diggital_testimonial_1 .single_review{
+	outline: none;
+}
+.diggital_testimonial_1 .single_review .client_img img{
+	max-width: 370px;
+}
+.diggital_testimonial_1 .client_text{
+	text-align: center;
+}
+.diggital_testimonial_1 .client_text img{
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+.diggital_testimonial_1 .client_text p{
+	color: #fff;
+	margin-bottom: 25px;
+}
+.diggital_testimonial_1 .author_info:before{
+	background-color: #fff;
+	display: block;
+	content: '';
+	width: 60px;
+  	height: 1px;
+  	margin: 0 auto;
+  	margin-bottom: 25px;
+}
+.diggital_testimonial_1 .author_info h4{
+	color: #fff;
+}
+.diggital_testimonial_1 .author_info p{
+	color: #fff;
+	margin-bottom: 0;
+	line-height: 40px;
+}
+/*>===================================
+	End diggital_testimonial section css
+======================================<*/
+
+/*>============================================
+	11. Start diggital_testimonial section css
+==============================================<*/
+.diggital_blog_1 .grid_item:hover .grid_inner_item .diggital_info{
+	box-shadow: 0px 3px 20px 0px rgba(76, 76, 76, 0.15);
+}
+.diggital_blog_1 .grid_inner_item{
+	background: #fff;
+	border: 1px solid #f3f3f3;
+}
+.diggital_blog_1 .grid_inner_item .diggital_info{
+	padding: 20px;
+	transition: all .5s;
+}
+.diggital_blog_1 .grid_inner_item .diggital_info h3{
+	font-size: 24px;
+	line-height: 34px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+.diggital_blog_1 .grid_inner_item .diggital_info h3 a{
+	color: #04040d;
+}
+.diggital_blog_1 .grid_inner_item .diggital_info h3 a:hover,
+.diggital_blog_1 .grid_inner_item .diggital_info h3 a:focus{
+	color: blue;
+}
+.diggital_blog_1 .grid_inner_item .diggital_info p{
+	margin-bottom: 10px;
+}
+.diggital_blog_1 .grid_inner_item .diggital_info a.btn_link{
+	font-size: 14px;
+	color: #04040d;
+	font-weight: 500;
+	transition: all .5s;
+}
+.diggital_blog_1 .grid_inner_item .diggital_info a.btn_link:before {
+    content: '';
+    width: 15px;
+    height: 2px;
+    display: inline-block;
+    background-color: blue;
+    margin-bottom: 4px;
+    margin-right: 10px;
+    transition: all .5s;
+}
+.diggital_blog_1 .grid_inner_item .diggital_info a.btn_link:hover,
+.diggital_blog_1 .grid_inner_item .diggital_info a.btn_link:focus{
+	color: blue;
+}
+.diggital_blog_1 .grid_inner_item .diggital_info a.btn_link:hover:before{
+	width: 25px;
+}
+/*>===================================
+	End diggital_testimonial section css
+======================================<*/
+
+
+/*>==========================================
+	12. Start diggital_newsletter section css
+=============================================<*/
+.diggital_newsletter_1 .newsletter_title{
+	margin-bottom: 60px;
+	margin-top: -14px;
+}
+.diggital_newsletter_1 .newsletter_title h2{
+	color: #04040d;
+	line-height: 72px;
+}
+.diggital_newsletter_1 .newsletter_title h2 span{
+	color: blue;
+}
+.newsletter_form .form_group{
+	position: relative;
+	margin-bottom: 0;
+}
+.newsletter_form .form_control{
+	width: 100%;
+	height: 60px;
+	font-size: 14px;
+	color: #7a7d8a;
+	background-color: #fff;
+	box-shadow: 0px 3px 20px 0px #f3f3f3;
+	border-radius: 40px;
+	padding-left: 30px;
+}
+.newsletter_form .diggital_btn{
+	width: 223px;
+  	height: 60px;
+  	line-height: 63px;
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  	border-radius: 50px;
+  	text-transform: uppercase;
+  	letter-spacing: 2px;
+  	font-weight: 500;
+}
+/*>===================================
+	End diggital_newsletter section css
+======================================<*/
+
+/*>=====================================
+	13. Start diggital_footer area css
+========================================<*/
+.diggital_footer .footer_top{
+	padding: 59px 0 50px;
+	border-bottom: 1px solid blue;
+}
+.diggital_footer .footer_top .social_link{
+	float: right;
+}
+.diggital_footer .footer_top .social_link ul li{
+	display: inline-block;
+	margin-left: 30px;
+}
+.diggital_footer .footer_top .social_link ul li a{
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px solid blue;
+	color: #fff;
+	background-color: transparent;
+	transition: all .3s;
+}
+.diggital_footer .footer_top .social_link ul li a:hover,
+.diggital_footer .footer_top .social_link ul li a:focus{
+	background-color: blue;
+	color: #fff;
+	border-color: blue;
+}
+.diggital_footer .footer_copyright{
+	padding: 25px 0 25px;
+}
+.diggital_footer .footer_copyright .copyright_text p{
+	color: #FFF;
+}
+.diggital_footer .footer_top_content{
+	margin-top: 52px;
+}
+.diggital_footer .footer_menu li {
+    display: inline-block;
+    margin-left: 13px;
+    margin-right: 13px;
+}
+.diggital_footer .footer_menu li a{
+	color: #fff;
+}
+.diggital_footer .footer_top_content p{
+	margin-top: 14px;
+	color: #fff;
+}
+/*>===============================
+	End diggital_footer area css
+==================================<*/
+
+/*>=============================
+	14. Start Home_2.html css
+===============================<*/
+/*
+	Start header_area css
+*/
+.header_area_2{
+	position: relative;
+}
+.header_area_2 .diggital_menu .main_menu ul li a{
+	color: #04040d;
+	padding: 33px 0px 31px;
+}
+.header_area_2 .diggital_menu .main_menu ul li:hover > a {
+    color: blue;
+}
+/*
+	End header_area css
+*/
+
+/*
+	Start header_banner_2 section css
+*/
+.header_banner_2{
+	padding: 193px 0 200px;
+	position: relative;
+	background-color: #04040d;
+}
+/*
+	End header_banner_2 section css
+*/
+
+/*
+	Start diggital_what_we_2 section css
+*/
+.diggital_what_we_1 .section_title,
+.diggital_what_we_2 .section_title{
+    margin-top: -8px;
+}
+.diggital_what_we_2 .grid_item:hover .grid_inner_item{
+	box-shadow: 0px 3px 20px 0px rgba(76, 76, 76, 0.15);
+}
+.diggital_what_we_2 .grid_inner_item {
+	padding: 30px 25px 25px;
+	text-align: center;
+	border: 1px solid #f3f3f3;
+	transition: all .5s;
+}
+.diggital_what_we_2 .grid_item:hover .grid_inner_item .diggital_icon i{
+	background-color: blue;
+	color: #fff;
+	box-shadow: none;
+}
+.diggital_what_we_2 .grid_inner_item .diggital_icon{
+	margin-bottom: 22px;
+}
+.diggital_what_we_2 .grid_inner_item .diggital_icon i{
+	display: inline-block;
+	width: 100px;
+  	height: 100px;
+  	line-height: 100px;
+  	text-align: center;
+  	border-radius: 50%;
+  	box-shadow: 0px 3px 20px 0px rgba(255, 0, 102, 0.15);
+  	font-size: 40px;
+  	color: blue;
+  	transition: all .5s;
+}
+.diggital_what_we_2 .grid_inner_item .diggital_info h4{
+	margin-bottom: 13px;
+	font-weight: 600;
+	color: #04040d
+}
+/*
+	End diggital_what_we_2 section css
+*/
+
+/*
+	Start diggital_about_2 section css
+*/
+.diggital_about_2 {
+    padding: 118px 0;
+}
+.diggital_about_2 .content_title h2:after{
+	margin-top: 30px;
+}	
+.diggital_about_2 .content_title{
+	margin-bottom: 38px;
+}
+.diggital_about_2 .content_title h2{
+	color: #04040d;
+}
+.diggital_about_2 .diggital_content_box p{
+	margin-bottom: 34px;
+}
+.diggital_about_2 .diggital_content_list .single_list {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 30px;
+}
+.diggital_about_2 .diggital_content_list .single_list:last-child{
+	margin-bottom: 0;
+}
+.diggital_about_2 .diggital_content_list .single_list .list_icon i{
+	display: block;
+	width: 60px;
+  	height: 60px;
+  	line-height: 60px;
+  	text-align: center;
+  	border-radius: 50%;
+  	background-color: blue;
+  	font-size: 25px;
+  	color: #fff;
+}
+.diggital_about_2 .diggital_content_list .single_list .list_info{
+	margin-left: 20px;
+}
+.diggital_about_2 .diggital_content_list .single_list .list_info h4{
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+/*
+	End diggital_about_2 section css
+*/
+
+/*
+	Start diggital_service section
+*/
+.diggital_service_2{
+	margin-bottom: -60px;
+}
+.diggital_service_2 .grid_item:hover .grid_inner_item .diggital_info{
+	box-shadow: 0px 3px 20px 0px rgba(76, 76, 76, 0.15);
+}
+.diggital_service_2 .grid_inner_item {
+    margin-bottom: 60px;
+    background-color: rgb(255, 255, 255);
+}
+.diggital_service_2 .grid_inner_item .diggital_img img{
+	width: 100%;
+}
+.diggital_service_2 .grid_inner_item .diggital_info{
+	padding: 25px 30px 22px; 
+	border: 1px solid #f3f3f3;
+	border-top: none;
+	transition: all .5s;
+}
+.diggital_service_2 .grid_inner_item .diggital_info h4{
+	font-weight: 600;
+	margin-bottom: 14px;
+}
+.diggital_service_2 .grid_inner_item .diggital_info p{
+	margin-bottom: 10px;
+}
+.diggital_service_2 .grid_inner_item .diggital_info a.btn_link{
+	color: blue;
+}
+/*
+	End diggital_service section
+*/
+.diggital_project{
+	padding-bottom: 115px;
+}
+.diggital_project .counter_box .counter_info i{
+	display: block;
+	color: #fff;
+	font-size: 60px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.diggital_project .counter_box .counter_info h2{
+	color: blue;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.diggital_project .counter_box .counter_info p{
+	color: #fff;
+}
+
+/*
+	Start xormi_case_study section
+*/
+.case_study_1 .section_title{
+	margin-top: -9px;
+}
+.diggital_faq_1 .section_title h2:after,
+.diggital_pricing_1 .section_title h2:after,
+.diggital_testimonial_2 .section_title h2:after,
+.case_study_1 .section_title h2:after{
+	margin-top: 31px;
+}
+.grid_item{
+	outline: none;
+}
+.case_study_slide{
+	margin-left: -15px;
+	margin-right: -15px;
+	position: relative;
+}
+.diggital_case_study .case_study_slide .grid_inner_item{
+	margin-left: 15px;
+	margin-right: 15px;
+	outline: none;
+	position: relative;
+	margin-bottom: 75px;
+}
+.diggital_case_study .grid_inner_item .diggital_info{
+	padding: 23px 30px 26px;
+	border: 1px solid #f3f3f3;
+	border-top: none;
+}
+.diggital_case_study .grid_inner_item .diggital_img{
+	position: relative;
+	overflow: hidden;
+}
+.diggital_case_study .grid_inner_item .diggital_info h3{
+	font-size: 24px;
+	line-height: 34px;
+	font-weight: 600;
+}
+.diggital_case_study .grid_inner_item .diggital_info h3 a.title{
+	color: #04040d;
+}
+.diggital_case_study .grid_inner_item .diggital_info a.tag{
+	color: blue;
+	margin-bottom: 10px;
+	display: block;
+}
+.case_study_2 .grid_inner_item{
+	margin-bottom: 60px;
+}
+.diggital_case_study .grid_inner_item .overlay_content{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-40%);
+	opacity: 0;
+	visibility: visible;
+	transition: all .5s;
+}
+.diggital_case_study .grid_inner_item .overlay_content a.btn_link {
+    display: block;
+    width: 150px;
+    height: 50px;
+    line-height: 53px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    background-color: blue;
+    transition: all .5s;
+}
+.diggital_case_study .grid_inner_item .overlay_content a.btn_link:hover,
+.diggital_case_study .grid_inner_item .overlay_content a.btn_link:focus{
+	color: #fff;
+}
+.diggital_case_study .grid_inner_item .overlay_img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #04040d;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .5s;
+}
+.diggital_case_study .grid_item:hover .grid_inner_item .overlay_img{
+	opacity: .8;
+	visibility: visible;
+}
+.diggital_case_study .grid_item:hover .overlay_content{
+	visibility: visible;
+	opacity: 1;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.case_study_slide .slick-dots{
+	bottom: 0px;
+}
+.case_study_slide .slick-dots li{
+	margin-left: 7.5px;
+	margin-right: 7.5px;
+}
+.case_study_slide .slick-dots li button{
+	width: 10px;
+	height: 10px;
+	background-color: blue;
+	border-radius: 50%;
+	transition: all .3s;
+}
+.case_study_slide .slick-dots li.slick-active button{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+}
+/*
+	End xormi_case_study section
+*/
+
+/*
+	Start diggital_testimonial section
+*/
+.diggital_testimonial_2{
+	padding-bottom: 115px;
+}
+.client_slider_2 .client_box{
+	text-align: center;
+	outline: none;
+}
+.client_slider_2 .client_img{
+	margin-bottom: 15px;
+}
+.client_slider_2 .client_img img{
+	max-width: 100px;
+	max-height: 100px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+.client_slider_2 .client_box .client_info {
+	margin-bottom: 10px;
+}
+.client_slider_2 .client_box .client_info h4{
+	margin-bottom: 15px;
+	color: #fff;
+}
+.client_slider_2 .client_box .client_info p{
+	color: #fff;
+}
+.client_slider_2 .client_box .review_text p{
+	color: #f3f3f3;
+}
+.client_slider_2 .slick-prev{
+	left: -70px;
+	z-index: 1;
+}
+.client_slider_2 .slick-next{
+	right: -70px;
+}
+.client_slider_2 .slick-prev:before{
+	content: '\f104';
+}
+.client_slider_2 .slick-next:before{
+	content: '\f105';
+}
+.client_slider_2 .slick-prev:before,
+.client_slider_2 .slick-next:before{
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	text-align: center;
+	background-color: #f3f3f3;
+	color: #04040d;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	transition: all .5s;
+}
+.client_slider_2 .slick-prev:hover:before,
+.client_slider_2 .slick-next:hover:before{
+	background-color: blue;
+	color: #fff;
+}
+/*
+	End diggital_testimonial section
+*/
+
+/*
+	Start diggital_pricing section css
+*/
+.pricing_table{
+	padding: 35px 70px 40px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #f3f3f3;
+	transition: all .5s;
+}
+.pricing_table:hover{
+	box-shadow: 0px 3px 20px 0px rgba(76, 76, 76, 0.15);
+}
+.pricing_top span.plan_title{
+	display: block;
+	font-size: 18px;
+	color: blue;
+	margin-bottom: 12px;
+}
+.pricing_top h2{
+	color: #04040d;
+}
+.pricing_top h2 span{
+	font-size: 14px;
+	font-weight: 500;
+}
+.pricing_top {
+	padding-bottom: 25px;
+    border-bottom: 1px solid #f3f3f3;
+}
+.pricing_body {
+	margin-top: 28px;
+}
+.pricing_body ul li{
+	line-height: 36px;
+}
+.pricing_button{
+	margin-top: 31px;
+}
+/*
+	End diggital_pricing section css
+*/
+
+/*
+	Start diggital_faq section css
+*/
+.ximri_faq_area {
+	position: relative;
+	min-height: 555px;
+}
+.ximri_faq_area .diggital_faq_1{
+	position: relative;
+	overflow: hidden;
+	display: block;
+}
+.ximri_faq_area .card{
+	margin-bottom: 20px;
+	border: none;
+	border-radius: 0;
+	background-color: blue;
+}
+.ximri_faq_area .card:last-child{
+	margin-bottom: 0;
+}
+.ximri_faq_area .card-header{
+	background-color: blue;
+	border-radius: 0;
+	margin-bottom: 0;
+	padding: 23px 40px 27px;
+}
+.ximri_faq_area .card-header button.title{
+	background-color: transparent;
+	color: #fff;
+	font-size: 18px;
+}
+.ximri_faq_area .accordion>.card .card-header{
+	margin-bottom: 0;
+}
+.ximri_faq_area .card-header:first-child{
+	border-radius: 0;
+}
+.ximri_faq_area .card-body{
+	padding: 24px 30px 22px;
+	border-top: 1px solid #f3f3f3;
+}
+.ximri_faq_area .card-body p{
+	color: #fff;
+}
+.ximri_faq_area .card .card-header button i.fas{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 27px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+.ximri_faq_area .card .card-header button i.fas{
+    display: none;
+}
+.ximri_faq_area .card .card-header button[aria-expanded="true"] i.fas.fa-angle-down{
+    display: block;
+}
+.ximri_faq_area .card .card-header button[aria-expanded="false"] i.fas.fa-angle-up{
+    display: block;
+}
+/*
+	End diggital_faq section css
+*/
+
+/*
+	Start diggital_blog_2 section css
+*/
+.diggital_blog_2 .grid_item:hover .overlay_content{
+	visibility: visible;
+	opacity: 1;
+}
+.diggital_blog_2 .grid_inner_item{
+	margin-bottom: 60px;
+}
+.diggital_blog_2 .grid_inner_item .diggital_info{
+	padding: 26px 30px 27px;
+	border: 1px solid #f3f3f3;
+}
+.diggital_blog_2 .grid_inner_item .diggital_img {
+	position: relative;
+	overflow: hidden;
+}
+.diggital_blog_2 .grid_inner_item .overlay_content{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .5s;
+}
+.diggital_blog_2 .grid_inner_item .overlay_content .blog_btn{
+    width: 155px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background-color: blue;
+    display: block;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all .5s;
+}
+.diggital_blog_2 .grid_inner_item .diggital_info .post_meta{
+	margin-bottom: 6px;
+}
+.diggital_blog_2 .grid_inner_item .diggital_info .post_meta a{
+	color: #7a7d8a;
+	display: inline-block;
+}
+.diggital_blog_2 .grid_inner_item .diggital_info .post_meta a:after{
+	content: '|';
+	margin-left: 16px;
+	margin-right: 12px;
+}
+.diggital_blog_2 .grid_inner_item .diggital_info .post_meta a:last-child:after{
+	display: none;
+}
+.diggital_blog_2 .grid_inner_item .diggital_info .post_title h3{
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 36px;
+}
+.diggital_blog_2 .grid_inner_item .diggital_info .post_title h3 a{
+	color: #04040d;
+}
+/*
+	end diggital_blog_2 section css
+*/
+
+/*
+	Start diggital_contact_1 section css
+*/
+.diggital_contact_1 .contact_title{
+	margin-bottom: 45px;
+	margin-top: -12px;
+}
+.diggital_contact_1 .contact_title h2{
+	line-height: 67px;
+}
+.diggital_contact_1 .contact_title span{
+	color: blue;
+}
+/*
+	End diggital_contact_1 section css
+*/
+
+/*>===============================
+	End Home-2.html  css
+==================================<*/
+
+/*>=====================================
+	15. Start diggital_breadcrumb section css
+========================================<*/
+.diggital_breadcrumb{
+	padding-top: 279px;
+	padding-bottom: 175px;
+}
+.breadcrumb_content h2{
+	color: #fff;
+	text-transform: capitalize;
+	margin-bottom: 17px;
+}
+.breadcrumb_content ul li{
+	display: inline-block;
+	color: blue;
+}
+.breadcrumb_content ul li:after{
+	display: inline-block;
+	content: '|';
+	color: #fff;
+	margin-left: 18px;
+	margin-right: 14px;
+}
+.breadcrumb_content ul li:last-child:after{
+	display: none;
+}
+.breadcrumb_content ul li a{
+	color: #fff;
+}
+/*>===================================
+	End diggital_breadcrumb section css
+======================================<*/
+
+
+/*>===============================
+	16. Start About.html  css
+==================================<*/
+.gray_bg{
+	background-color: #f3f3f3;
+}
+.diggital_contact_qoute .diggital_content_box {
+    margin-top: -10px;
+}
+.diggital_contact_qoute .diggital_content_box h2{
+	color: #fff;
+	margin-bottom: 35px;
+}
+.diggital_contact_qoute .diggital_content_box p{
+	margin-bottom: 35px;
+	color: #fff;
+}
+.sponsor_slide{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.single_sponsor {
+	margin-left: 15px;
+	margin-right: 15px;
+	outline: none;
+}
+.single_sponsor .diggital_img {
+    display: flex;
+    align-items: center;
+    border: 1px solid #f3f3f3;
+    padding: 10px;
+    height: 60px;
+}
+.single_sponsor .diggital_img img{
+	margin: 0 auto;
+}
+.diggital_testimonial_2 {
+	padding-bottom: 105px;
+}
+.diggital_testimonial_2 .client_text p{
+	color: #7a7d8a;
+}
+.diggital_testimonial_2 .author_info h4,
+.diggital_testimonial_2 .author_info p{
+	color: #04040d;
+}
+/*>===============================
+	End About.html  css
+==================================<*/
+
+/*>==================================
+	17. Start single_case.html  css
+=====================================<*/
+.diggital_single_case_wrapper{
+	padding-bottom: 115px;
+}
+.diggital_single_case_wrapper .case_stroy {
+    margin-top: -10px;
+}
+.diggital_single_case_wrapper .case_stroy .content_title {
+	margin-bottom: 55px;
+}
+.diggital_single_case_wrapper .case_stroy .content_title h2{
+	color: #04040d;
+}
+.diggital_single_case_wrapper .case_stroy .content_title h2:after {
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.diggital_single_case_wrapper .case_stroy .story_text p{
+	margin-bottom: 20px;
+}
+.stroy_categories{
+	padding: 36px 40px 32px;
+	background-color: blue;
+}
+.stroy_categories h4{
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 20px;
+}
+.stroy_categories ul li{
+	margin-bottom: 5px;
+}
+.stroy_categories ul li:last-child{
+	margin-bottom: 0;
+}
+.stroy_categories ul li a{
+	color: #fff;
+}
+.study_wrapper{
+	margin-top: 42px;
+	margin-bottom: 55px;
+}
+.study_wrapper .grid_inner_item .diggital_info{
+	background-color: #f3f3f3;
+	padding: 24px 30px 25px;
+}
+.study_wrapper .grid_inner_item .diggital_info h4{
+	color: blue;
+	margin-bottom: 22px;
+	font-weight: 600;
+}
+.single_project_details{
+	text-align: center;
+}
+.single_project_details h4{
+	font-weight: 600;
+}
+.single_project_details h4:after{
+	display: block;
+	content: '';
+	width: 80px;
+	height: 2px;
+	background-color: blue;
+	margin: 14px auto 12px;
+}
+.single_project_details a.tag{
+	display: inline-block;
+	color: #7a7d8a;
+}
+/*>===============================
+	End single_case.html  css
+==================================<*/
+
+/*>===============================
+	18. Start blog.html  css
+==================================<*/
+.diggital_pagination ul li{
+	display: inline-block;
+	margin-left: 7px;
+	margin-right: 7px;
+}
+.diggital_pagination ul li a{
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border: 1px solid #f3f3f3;
+	color: #7a7d8a;
+	transition: all .5s;
+}
+.diggital_pagination ul li a:hover,
+.diggital_pagination ul li a:focus{
+	background-color: blue;
+	color: #fff;
+	border-color: blue;
+}
+/*>===============================
+	End blog.html  css
+==================================<*/
+
+/*>==================================
+	19. Start single_blog.html  css
+=====================================<*/
+.post_main_content .post_meta {
+	margin-bottom: 30px;
+}
+.post_main_content .post_meta a{
+	color: #7a7d8a;
+	margin-right: 25px;
+}
+.post_main_content .post_meta a i{
+	margin-right: 10px;
+}
+.post_main_content h3{
+	margin-bottom: 25px;
+	line-height: 43px;
+}
+.post_main_content p{
+	margin-bottom: 29px;
+	display: inline-table;
+}
+.post_main_content .diggital_img{
+	margin-top: 5px;
+	margin-bottom: 35px;
+}
+.post_share_tag {
+    padding-top: 30px;
+    border-top: 1px solid #f3f3f3;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f3f3f3;
+}
+.post_share_tag .post_tag ul li{
+	display: inline-block;
+	margin-right: 10px;
+}
+.post_share_tag .post_tag ul li a{
+	display: block;
+	padding: 6px 20px;
+	border: 1px solid #f3f3f3;
+	font-size: 14px;
+	color: #7a7d8a;
+	transition: all .5s;
+}
+.post_share_tag .post_tag ul li a:hover,
+.post_share_tag .post_tag ul li a:focus,
+.post_share_tag .post_share ul li a:hover,
+.post_share_tag .post_share ul li a:focus{
+	background-color: blue;
+	color: #fff;
+	border-color: blue;
+}
+.post_share_tag .post_share{
+	float: right;
+}
+.post_share_tag .post_share ul li{
+	display: inline-block;
+	margin-left: 10px;
+}
+.post_share_tag .post_share ul li a{
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 14px;
+	border: 1px solid #f3f3f3;
+	color: #7a7d8a;
+	transition: all .5s;
+}
+.post_prev_next{
+	margin-top: 27px;
+	margin-bottom: 50px;
+}
+.post_prev_next .post_prev a,
+.post_prev_next .post_next a{
+	color: #04040d;
+	font-weight: bold;
+}
+.post_prev_next .post_prev a i,
+.post_prev_next .post_next a i{
+	margin-right: 10px;
+}
+.post_prev_next .post_next{
+	float: right;
+}
+.blog_post_author{
+	display: flex;
+	align-items: flex-start;
+	padding: 40px;
+	background-color: #f3f3f3;
+	margin-bottom: 56px;
+}
+.blog_post_author .author_img{
+	width: 23.53%;
+}
+.blog_post_author .author_img img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.blog_post_author .author_info{
+	width: 76.47%;
+	margin-left: 30px;
+}
+.blog_post_author .author_info h4{
+	margin-bottom: 20px;
+}
+.comment_area .single_comment{
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 30px;
+}
+.comment_area .single_comment .comment_img{
+	width: 8%;
+}
+.comment_area .single_comment .comment_img img{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+.comment_area .single_comment .comment_info{
+	width: 92%;
+	margin-left: 20px;
+	border-bottom: 1px solid #f3f3f3;
+}
+.comment_area .comment_info .comment_author{
+    display: flex;
+    justify-content: space-between;
+}
+.comment_area .comment_info .comment_author .author_info{
+	margin-bottom: 10px;
+}
+.comment_area .comment_info .comment_author .author_info h4{
+	margin-bottom: 8px;
+}
+.comment_area .comment_info .comment_author .button .reply_btn{
+	display: inline-block;
+	padding: 10px 30px;
+	color: blue;
+	font-size: 16px;
+	text-transform: uppercase;
+	border: 1px solid blue;
+	transition: all .5s;
+}
+.comment_area .comment_info .comment_author .button .reply_btn:hover,
+.comment_area .comment_info .comment_author .button .reply_btn:focus{
+	background-color: blue;
+	color: #fff;
+	border-color: blue;
+}
+.comment_text{
+	padding-bottom: 25px;
+}
+.wrapper_title{
+	margin-bottom: 30px;
+}
+.wrapper_title h4{
+	padding-bottom: 25px;
+	border-bottom: 1px solid #f3f3f3;
+}
+.sidebar_wiget_box{
+	padding: 35px 40px 30px;
+	border: 1px solid #f3f3f3;
+	margin-bottom: 40px;
+}
+.widget_title h4{
+	margin-bottom: 34px;
+	font-weight: 600;
+}
+.widget_title h4:before {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: blue;
+    display: inline-block;
+    margin-bottom: 6px;
+    margin-right: 10px;
+}
+.search_box{
+	padding: 40px;
+}
+.search_box .search_form i{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+.search_box .search_form .diggital_btn{
+	width: 100%;
+	border-radius: 0;
+	text-transform: uppercase;
+}
+.category_box{
+	padding: 35px 40px 25px;
+}
+.category_box .categories_list li{
+	padding-bottom: 10px;
+	margin-bottom: 14px;
+	border-bottom: 1px solid #f3f3f3;
+}
+.category_box .categories_list li:last-child{
+	border: none;
+	margin-bottom: 0;
+}
+.category_box .categories_list li a{
+	color: #7a7d8a;	
+}
+.category_box .categories_list li a span{
+	float: right;
+}
+.recent_news_box .single_news{
+	overflow: hidden;
+	padding-bottom: 17px;
+	border-bottom: 1px solid #f3f3f3;
+	margin-bottom: 17px;
+}
+.recent_news_box .single_news:last-child{
+	margin-bottom: 0;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+.recent_news_box .single_news .news_thumb{
+	float: left;
+    max-width: 60px;
+}
+.recent_news_box .single_news .news_info{
+	margin-top: -7px;
+	margin-left: 80px;
+}
+.recent_news_box .single_news .news_info h5{
+	font-size: 14px;
+	line-height: 26px;
+}
+.recent_news_box .single_news .news_info h5 a{
+	color: #04040d;
+}
+.recent_news_box .single_news .news_info a.date{
+	color: #7a7d8a;
+	font-size: 14px;
+}
+.tags_box{
+	padding: 35px 40px 25px;
+}
+.tags_box ul.tags_list li{
+	display: inline-block;
+	margin-right: 10px;
+}
+.tags_box ul.tags_list li a{
+	display: block;
+	padding: 10px 20px;
+	font-size: 14px;
+	color: #7a7d8a;
+	margin-bottom: 15px;
+	border: 1px solid #f3f3f3;
+	text-transform: capitalize;
+	transition: all .5s;
+}
+.tags_box ul.tags_list li a:hover,
+.tags_box ul.tags_list li a:focus{
+	background-color: blue;
+	color: #fff;
+}
+.instagram_box {
+	padding: 35px 40px 25px
+}
+.instagram_img_box {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.instagram_box .instagram_img_box .padding {
+    overflow: hidden;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+.instagram_box .instagram_img_box .single_img{
+	margin-bottom: 15px;
+}
+.instagram_box .instagram_img_box .single_img img{
+	width: 100%;
+}
+/*>===============================
+	End single_blog.html  css
+==================================<*/
+
+
+/*>===============================
+	20. Start contact.html  css
+==================================<*/
+.diggital_contact_2 .contact_form_area{
+	padding: 30px;
+	box-shadow: 0px 3px 20px 0px #f3f3f3;
+}
+.form_group{
+	position: relative;
+	margin-bottom: 20px;
+}
+.form_control{
+	width: 100%;
+	height: 50px;
+	padding: 20px;
+	border: 1px solid #f3f3f3;
+}
+textarea.form_control{
+	height: 200px;
+	display: inherit;
+}
+.diggital_map_box iframe{
+	width: 100%;
+	height: 500px;
+	display: inherit;
+	border: none;
+}
+/*>===============================
+	End contact.html  css
+==================================<*/

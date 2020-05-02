@@ -1,0 +1,433 @@
+/*Extra Large Device*/
+@media only screen and (min-width: 1201px){
+	
+}
+
+/*Large Device*/
+@media only screen and (min-width: 992px) and (max-width : 1200px) {
+	.section_title h2 {
+	    font-size: 44px;
+	}
+	.diggital_menu .main_menu ul li > ul.sub_menu{
+		width: 180px;
+	}
+	.diggital_menu .main_menu ul li > ul.sub_menu li > a {
+	    padding: 5px 20px;
+	}
+	.welcome_content h1 {
+	    font-size: 46px;
+	}
+	.diggital_about .diggital_content_box h2:after {
+	    margin-top: 10px;
+	    margin-bottom: 13px;
+	}
+	.diggital_about_1 .counter_area {
+	    margin-top: 10px;
+	    margin-bottom: 20px;
+	}
+	.diggital_about_1 .counter_box .counter_info i {
+	    font-size: 30px;
+	    margin-bottom: 20px;
+	}
+	.diggital_about_1 .counter_box .counter_info h3 {
+	    margin-bottom: 0px;
+	}
+	.diggital_what_we_1 .grid_inner_item .diggital_info h4 {
+	    font-size: 18px;
+	}
+	.diggital_blog_1 .grid_inner_item .diggital_info h3 {
+	    font-size: 22px;
+	    line-height: 34px;
+	}
+	/*home_2.html*/
+	.diggital_about_2 .row.align-items-center {
+	    -ms-flex-align: flex-start !important;
+	    align-items: flex-start !important;
+	}
+	.diggital_about_2 .content_title h2 {
+	    font-size: 20px;
+	}
+	.diggital_about_2 .content_title {
+	    margin-bottom: 18px;
+	}
+	.diggital_about_2 .diggital_content_list .single_list {
+	    margin-bottom: 10px;
+	}
+	.diggital_about_2 .diggital_content_list .single_list .list_icon i{
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 16px;
+	}
+	.client_slider_2 .slick-prev{
+		left: -30px;
+	}
+	.client_slider_2 .slick-next {
+	    right: -30px;
+	}
+	/*single_blog*/
+	.diggital_blog_2 .grid_inner_item .diggital_info .post_title h3 {
+	    font-size: 18px;
+	    line-height: 26px;
+	}
+	.search_box .search_form .form_control {
+	    font-size: 14px;
+	}
+	.search_box .search_form i {
+	    font-size: 14px;
+	}
+	.recent_news_box .single_news{
+		align-items: flex-start;
+	}
+	.recent_news_box .single_news .news_info h5 {
+	    font-size: 14px;
+	    line-height: 24px;
+	}
+	
+}
+
+/*Medium Device*/
+@media only screen and (min-width: 768px) and (max-width : 991px) {
+	.header_area .site_menu{
+		display: none;
+	}
+	.mobile_wrapper{
+		display: block;
+	}
+	.diggital_img img{
+		width: 100%;
+	}
+	.header_banner_1{
+		padding: 233px 0 180px;
+	}
+	.welcome_content h1 {
+	    font-size: 30px;
+	}
+	.about_img_box {
+	    margin-bottom: 60px;
+	}
+	.diggital_about_1 .counter_area{
+		margin-bottom: 0;
+	}
+	.counter_box {
+	    margin-bottom: 60px;
+	}
+	.diggital_what_we_1 .grid_inner_item{
+		margin-bottom: 60px;
+	}
+	.diggital_what_we_1 .grid_inner_item .diggital_info h4 {
+		font-size: 18px;
+	}
+	.diggital_testimonial_1 .client_slider{
+		width: 90%;
+	}
+	.diggital_testimonial_1 .single_review .client_text {
+	    padding: 40px 20px;
+	}
+	.diggital_blog_1 .grid_inner_item{
+		margin-bottom: 60px;
+	}
+	.diggital_blog_1 .grid_inner_item .diggital_info h3 {
+	    font-size: 18px;
+	    line-height: 30px;
+	}
+	.footer_logo {
+	    text-align: center;
+	    margin-bottom: 30px;
+	}
+	.diggital_footer .footer_top .social_link{
+	    float: none;
+	    text-align: center;
+	}
+	.diggital_footer .footer_top .social_link ul li {
+	    margin-left: 10px;
+	    margin-right: 10px;
+	}
+	/*home-2.html*/
+	.header_area_2 .menu_button .menu_icon span{
+	    background-color: #04040d;
+	}
+	.diggital_what_we_2 .content_title h2 {
+	    font-size: 32px;
+	}
+	.diggital_what_we_2 .grid_inner_item{
+		margin-bottom: 60px;
+	}
+	.diggital_about_2 .diggital_img_box{
+		margin-bottom: 60px;
+	}
+	.diggital_service_2 .grid_inner_item .diggital_info h4 {
+	    font-size: 20px;
+	}
+	.pricing_table {
+	    margin-bottom: 60px;
+	}
+	.ximri_faq_area .card-header button.title {
+	    font-size: 16px;
+	    text-align: left;
+	}
+	.ximri_faq_area {
+	    margin-bottom: 60px;
+	}
+	/*single_case.html*/
+	.diggital_single_case_wrapper .case_stroy .content_title h2 {
+	    font-size: 30px;
+	}
+	.diggital_single_case_wrapper .study_wrapper .grid_inner_item {
+	    margin-bottom: 60px;
+	}
+	.single_project_details{
+		margin-bottom: 40px;
+	}
+	/*Single_blog.html*/
+	.post_main_content .post_meta a {
+	    font-size: 14px;
+	}
+	.post_share_tag .post_tag {
+	    text-align: center;
+	}
+	.post_share_tag .post_share {
+	    float: none;
+	    text-align: center;
+	    margin-top: 20px;
+	}
+	.post_share_tag .post_share ul li {
+	    margin-left: 7.4px;
+	    margin-right: 7.5px;
+	}
+	.post_prev_next .post_prev a, .post_prev_next .post_next a {
+	    font-size: 13px;
+	}
+	.blog_post_author {
+	    display: block;
+	}
+	.blog_post_author .author_img {
+    	width: 100%;
+	}
+	.blog_post_author .author_info {
+	    width: 100%;
+	    margin-left: 0;
+	    margin-top: 30px;
+	}
+	.comment_area .single_comment {
+	    display: block;
+	}
+	.comment_area .single_comment .comment_img {
+	    width: 100%;
+	}
+	.comment_area .single_comment .comment_info {
+	    width: 100%;
+	    margin-left: 0;
+	    margin-top: 20px;
+	}
+	.comment_form {
+	    margin-bottom: 60px;
+	}
+	.sidebar_wiget_box {
+	    padding: 35px 20px 30px;
+	}
+	.recent_news_box .search_box {
+	    padding: 40px 20px;
+	}
+	.tags_box ul.tags_list li a {
+	    padding: 10px 10px;
+	}
+	/*contact.html*/
+	.diggital_newsletter_1 .newsletter_title h2 {
+	    font-size: 32px;
+	    line-height: 44px;
+	}
+	.diggital_pagination {
+	    margin-bottom: 40px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+	.header_area .site_menu{
+		display: none;
+	}
+	.mobile_wrapper{
+		display: block;
+	}
+	.section_title h2 {
+		line-height: 36px;
+	    font-size: 26px;
+	}
+	.diggital_img img {
+	    width: 100%;
+	    height: 100%;
+	}
+	.header_banner_1{
+		padding: 233px 0 180px;
+	}
+	.welcome_content h1 {
+	    font-size: 30px;
+	}
+	.about_img_box {
+	    margin-bottom: 60px;
+	}
+	.diggital_about .diggital_content_box h2 {
+	    font-size: 26px;
+	}
+	.diggital_about_1 .counter_area{
+		margin-bottom: 0;
+	}
+	.counter_box {
+	    margin-bottom: 60px;
+	}
+	.diggital_what_we_1 .grid_inner_item{
+		margin-bottom: 60px;
+	}
+	.diggital_what_we_1 .grid_inner_item .diggital_info h4 {
+		font-size: 18px;
+	}
+	.diggital_testimonial_1 .client_slider{
+		width: 90%;
+	}
+	.diggital_testimonial_1 .single_review .client_text {
+	    padding: 40px 20px;
+	}
+	.diggital_blog_1 .grid_inner_item{
+		margin-bottom: 60px;
+	}
+	.diggital_blog_1 .grid_inner_item .diggital_info h3 {
+	    font-size: 18px;
+	    line-height: 30px;
+	}
+	.newsletter_form .diggital_btn {
+	    position: relative;
+	    margin-top: 30px;
+	}
+	.footer_logo {
+	    text-align: center;
+	    margin-bottom: 30px;
+	}
+	.diggital_footer .footer_top .social_link{
+	    float: none;
+	    text-align: center;
+	}
+	.diggital_footer .footer_top .social_link ul li {
+	    margin-left: 10px;
+	    margin-right: 10px;
+	}
+	/*home-2.html*/
+	.header_area_2 .menu_button .menu_icon span{
+	    background-color: #04040d;
+	}
+	.diggital_what_we_2 .grid_inner_item{
+		margin-bottom: 60px;
+	}
+	.diggital_about_2 .content_title h2 {
+	    font-size: 28px;
+	}
+	.diggital_about_2 .diggital_img_box{
+		margin-bottom: 60px;
+	}
+	.diggital_service_2 .grid_inner_item .diggital_info h4 {
+	    font-size: 18px;
+	}
+	.pricing_table {
+	    margin-bottom: 60px;
+	}
+	.ximri_faq_area .card-header button.title {
+	    font-size: 16px;
+	    text-align: left;
+	}
+	.ximri_faq_area .card-header {
+	    padding: 23px 20px 27px;
+	}
+	.ximri_faq_area {
+	    margin-bottom: 60px;
+	}
+	.diggital_contact_1 .contact_title h2 {
+	    line-height: 34px;
+	    font-size: 22px;
+	}
+	/*single_case.html*/
+	.diggital_single_case_wrapper .case_stroy .content_title h2 {
+	    font-size: 30px;
+	}
+	.diggital_single_case_wrapper .study_wrapper .grid_inner_item {
+	    margin-bottom: 60px;
+	}
+	.single_project_details{
+		margin-bottom: 40px;
+	}
+	/*Single_blog.html*/
+	.post_main_content .post_meta a {
+	    font-size: 14px;
+	}
+	.post_share_tag .post_tag {
+	    text-align: center;
+	}
+	.post_share_tag .post_share {
+	    float: none;
+	    text-align: center;
+	    margin-top: 20px;
+	}
+	.post_share_tag .post_share ul li {
+	    margin-left: 7.4px;
+	    margin-right: 7.5px;
+	}
+	.post_prev_next .post_prev a, .post_prev_next .post_next a {
+	    font-size: 13px;
+	}
+	.blog_post_author {
+	    display: block;
+	}
+	.blog_post_author .author_img {
+    	width: 100%;
+	}
+	.blog_post_author .author_info {
+	    width: 100%;
+	    margin-left: 0;
+	    margin-top: 30px;
+	}
+	.comment_area .single_comment {
+	    display: block;
+	}
+	.comment_area .single_comment .comment_img {
+	    width: 100%;
+	}
+	.comment_area .single_comment .comment_info {
+	    width: 100%;
+	    margin-left: 0;
+	    margin-top: 20px;
+	}
+	.comment_form {
+	    margin-bottom: 60px;
+	}
+	.sidebar_wiget_box {
+	    padding: 35px 20px 30px;
+	}
+	.recent_news_box .search_box {
+	    padding: 40px 20px;
+	}
+	.tags_box ul.tags_list li a {
+	    padding: 10px 10px;
+	}
+	.diggital_pagination {
+	    margin-bottom: 40px;
+	}
+	.diggital_pagination ul li a {
+	    width: 30px;
+	    height: 30px;
+	    line-height: 30px;
+	    margin-bottom: 10px;
+	}
+	/*contact.html*/
+	.diggital_newsletter_1 .newsletter_title h2 {
+	    font-size: 20px;
+	    line-height: 30px;
+	}
+}
+
+/* Mobile Devices, Tablets */
+@media only screen and (min-width: 450px) and (max-width : 767px) {
+	
+}
+/* Mobile Devices, Tablets */
+@media only screen and (min-width: 700px) and (max-width : 767px) {
+	
+}
