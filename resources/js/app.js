@@ -38,6 +38,12 @@ let routes = [
             plainLayout: 1,
         },
     },
+    {
+        path: '/register', component: require('./components/Auth/Register.vue').default, meta: {
+            plainLayout: 1,
+            auth: false
+        }
+    },
 ];
 
 const router = new VueRouter({

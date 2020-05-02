@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid p-0 m-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="#">Navbar</a>
@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <router-link to="/" class="nav-link">Home</router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Vacancies</a>
@@ -35,7 +35,7 @@
                             <a class="nav-link" href="#">Log in</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Register</a>
+                            <router-link to="/register" class="nav-link">Register</router-link>
                         </li>
                     </ul>
                 </div>
