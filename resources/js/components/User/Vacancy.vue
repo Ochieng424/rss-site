@@ -25,11 +25,6 @@
                 </div>
             </div>
         </div>
-        <div>
-            <button type="button" class="btn btn-outline-success" @click.prevent="feed">
-                <i class="fa fa-rss"></i>
-            </button>
-        </div>
     </div>
 </template>
 
