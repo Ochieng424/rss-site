@@ -59,6 +59,14 @@ let routes = [
         }
     },
     {
+        path: '/dashboard/vacancies/:vacancyId', component: require('./components/Admin/VacancyDetails.vue').default, meta: {
+            plainLayout: 2,
+            auth: {
+                roles: 'admin'
+            }
+        }
+    },
+    {
         path: '/dashboard', component: require('./components/Admin/Index.vue').default, meta: {
             plainLayout: 2,
             auth: {
@@ -82,6 +90,12 @@ const router = new VueRouter({
     }
 })
 router.mode = "html5";
+
+//vue-good-table
+import VueGoodTablePlugin from 'vue-good-table/src';
+import 'vue-good-table/dist/vue-good-table.css'
+Vue.use(VueGoodTablePlugin);
+
 
 // websanova
 Vue.router = router;

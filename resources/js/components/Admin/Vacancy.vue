@@ -3,6 +3,35 @@
         <p class="text-right">
             <button type="button" class="btn btn-sm btn-primary" @click="newModal">Post Vacancy</button>
         </p>
+        <div class="table-responsive">
+            <vue-good-table
+                :line-numbers="true"
+                :columns="columns"
+                :rows="rows"
+                :pagination-options="{
+          enabled: true,
+          mode: 'pages',
+          perPage: 10
+          }"
+                :search-options="{
+                enabled: true,
+                placeholder: 'Search this table',
+                }"
+            >
+                <template slot="table-row" slot-scope="props">
+                    <span v-if="props.column.field == 'action'">
+                      <router-link :to="{path: '/dashboard/vacancies/' + props.row.id}" type="button" class="btn btn-sm btn-primary btn-circle">
+                          more
+                      </router-link>
+                    </span>
+                    <span v-else>
+                      {{props.formattedRow[props.column.field]}}
+                    </span>
+                </template>
+
+            </vue-good-table>
+
+        </div>
         <div id="new-modal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
              aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -82,14 +111,48 @@
                     company: '',
                     location: '',
                     description: ''
-                }
+                },
+                columns: [
+                    {
+                        label: 'Title',
+                        field: 'title',
+                    },
+                    {
+                        label: 'Company',
+                        field: 'company',
+                    },
+                    {
+                        label: 'Location',
+                        field: 'location',
+                    },
+                    {
+                        label: 'Status',
+                        field: 'status',
+                    },
+                    {
+                        label: 'Actions',
+                        field: 'action',
+                    },
+                ],
+                rows: [],
+
             }
         },
         methods: {
+            getVacancies(){
+                try {
+                    axios.get('/admin/vacancy').then((data)=>{
+                        this.rows = data.data
+                    })
+                }catch (e) {
+                    throw new Error(e);
+                }
+            },
             postVacancy() {
                 this.isLoading = true;
                 axios.post('/admin/vacancy', this.form).then(() => {
                     this.isLoading = false;
+                    this.getVacancies();
                     swal.fire(
                         'Posted!',
                         'Vacancy posted successfully!',
@@ -111,6 +174,9 @@
             newModal() {
                 $('#new-modal').modal('show');
             }
+        },
+        mounted() {
+            this.getVacancies();
         }
     }
 </script>

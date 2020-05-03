@@ -43,4 +43,14 @@ class VacancyTest extends TestCase
         ]);
         $response->assertStatus(200);
     }
+
+    public function testAdminCanGetAllVacancies()
+    {
+        $token = $this->authenticate();
+
+        $response = $this->withHeaders([
+            'Authorization' => 'Bearer '. $token,
+        ])->json('GET', '/api/v1/admin/vacancy');
+        $response->assertStatus(200);
+    }
 }
