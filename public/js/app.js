@@ -3501,7 +3501,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login() {
-      // this.isLoading = true;
+      this.isLoading = true;
       this.$auth.login({
         params: {
           email: this.form.email,

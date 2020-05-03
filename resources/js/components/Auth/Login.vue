@@ -59,7 +59,7 @@
         },
         methods: {
             login() {
-                // this.isLoading = true;
+                this.isLoading = true;
                 this.$auth.login({
                     params: {
                         email: this.form.email,
