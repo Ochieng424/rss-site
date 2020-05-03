@@ -6,7 +6,6 @@ use App\User;
 use App\Vacancy;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 use JWTAuth;
 

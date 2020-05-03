@@ -4,7 +4,7 @@
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand">
-                    <a href="#">Diggital</a>
+                    <a href="#">Job-app</a>
                     <i class="fa fa-times" @click="toggleSidebar" style="cursor: pointer"></i>
                 </div>
                 <!-- sidebar-header  -->
@@ -14,7 +14,7 @@
                     </div>
                     <div class="user-info">
                         <span class="user-name">
-<!--                            <strong>{{$auth.user().name}}</strong>-->
+                            <strong>{{$auth.user().name}}</strong>
                         </span>
                         <span class="user-role">Administrator</span>
                         <span class="user-status">
@@ -220,5 +220,7 @@
 </script>
 
 <style scoped>
-
+ .router-link-exact-active span{
+     color: blue;
+ }
 </style>
