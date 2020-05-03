@@ -3235,6 +3235,12 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/admin/vacancy', this.form).then(function () {
         _this.isLoading = false;
         swal.fire('Posted!', 'Vacancy posted successfully!', 'success');
+        _this.form = {
+          title: '',
+          company: '',
+          location: '',
+          description: ''
+        };
         $('#new-modal').modal('hide');
       })["catch"](function (resp) {
         _this.isLoading = false;
@@ -43325,7 +43331,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { rows: "3" },
+                    attrs: { rows: "3", placeholder: "Job description" },
                     domProps: { value: _vm.form.description },
                     on: {
                       input: function($event) {

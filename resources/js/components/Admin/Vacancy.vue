@@ -43,7 +43,7 @@
                         <div class="form-group">
                             <label>Job description</label>
                             <textarea v-model="form.description" class="form-control"
-                                      rows="3"></textarea>
+                                      rows="3" placeholder="Job description"></textarea>
                             <small style="color: red" v-if="error && errors.description">{{
                                 errors.description[0]
                                 }}</small>
@@ -95,6 +95,12 @@
                         'Vacancy posted successfully!',
                         'success'
                     )
+                    this.form = {
+                        title: '',
+                        company: '',
+                        location: '',
+                        description: ''
+                    };
                     $('#new-modal').modal('hide');
                 }).catch((resp) => {
                     this.isLoading = false;
