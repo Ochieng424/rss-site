@@ -3377,6 +3377,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "VacancyDetails",
   data: function data() {
@@ -3386,12 +3392,23 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    getVacancy: function getVacancy() {
+    getVacancyUser: function getVacancyUser() {
       var _this = this;
 
       try {
-        axios.get('/admin/vacancy/' + this.vacancyId).then(function (data) {
+        axios.get('/vacancy/' + this.vacancyId).then(function (data) {
           _this.details = data.data;
+        });
+      } catch (e) {
+        throw new Error(e);
+      }
+    },
+    getVacancyAdmin: function getVacancyAdmin() {
+      var _this2 = this;
+
+      try {
+        axios.get('/admin/vacancy/' + this.vacancyId).then(function (data) {
+          _this2.details = data.data;
         });
       } catch (e) {
         throw new Error(e);
@@ -3399,7 +3416,13 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    this.getVacancy();
+    if (this.$auth.user().role == "admin") {
+      this.getVacancyAdmin();
+    }
+
+    if (this.$auth.user().role == "user") {
+      this.getVacancyUser();
+    }
   }
 });
 
@@ -3796,7 +3819,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Vacancy"
+  name: "Vacancy",
+  data: function data() {
+    return {
+      vacancies: []
+    };
+  },
+  methods: {
+    getOpenVacancies: function getOpenVacancies() {
+      var _this = this;
+
+      try {
+        axios.get('/vacancy').then(function (data) {
+          _this.vacancies = data.data;
+        });
+      } catch (e) {
+        throw new Error(e);
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.getOpenVacancies();
+  }
 });
 
 /***/ }),
@@ -72948,69 +72992,81 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-sm-10" }, [
-        _c("p", [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$router.go(-1)
+    _c("div", { staticClass: "row justify-content-center mt-4" }, [
+      _c(
+        "div",
+        { class: _vm.$auth.user().role == "user" ? "col-sm-8" : "col-sm-10" },
+        [
+          _c("p", [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary btn-sm",
+                on: {
+                  click: function($event) {
+                    return _vm.$router.go(-1)
+                  }
                 }
-              }
-            },
-            [_c("i", { staticClass: "fa fa-arrow-left" })]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card" }, [
-          _vm._m(0),
+              },
+              [_c("i", { staticClass: "fa fa-arrow-left" })]
+            )
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("table", { staticClass: "table table-borderless mb-0" }, [
-              _c("tbody", [
-                _c("tr", [
-                  _c("th", [_vm._v("Number#")]),
+          _c("div", { staticClass: "card" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("table", { staticClass: "table table-borderless mb-0" }, [
+                _c("tbody", [
+                  _c("tr", [
+                    _c("th", [_vm._v("Number#")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(_vm.details.id))])
+                  ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.details.id))])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", [_vm._v("Title")]),
+                  _c("tr", [
+                    _c("th", [_vm._v("Title")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(_vm.details.title))])
+                  ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.details.title))])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", [_vm._v("Company")]),
+                  _c("tr", [
+                    _c("th", [_vm._v("Company")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(_vm.details.company))])
+                  ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.details.company))])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", [_vm._v("Location")]),
+                  _c("tr", [
+                    _c("th", [_vm._v("Location")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(_vm.details.location))])
+                  ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.details.location))])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", [_vm._v("Status")]),
+                  _c("tr", [
+                    _c("th", [_vm._v("Status")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(_vm.details.status))])
+                  ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.details.status))])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("th", [_vm._v("Description")]),
+                  _c("tr", [
+                    _c("th", [_vm._v("Description")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(_vm.details.description))])
+                  ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm.details.description))])
+                  _vm.$auth.user().role == "user"
+                    ? _c("tr", [
+                        _c("th", [_vm._v("Apply")]),
+                        _vm._v(" "),
+                        _vm._m(1)
+                      ])
+                    : _vm._e()
                 ])
               ])
             ])
           ])
-        ])
-      ])
+        ]
+      )
     ])
   ])
 }
@@ -73021,6 +73077,18 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header bg-dark" }, [
       _c("h5", { staticClass: "text-white" }, [_vm._v("Vacancy Details")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c(
+        "button",
+        { staticClass: "btn btn-sm btn-success", attrs: { type: "button" } },
+        [_vm._v("Apply here")]
+      )
     ])
   }
 ]
@@ -73748,62 +73816,87 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("h4", { staticClass: "text-center m-2" }, [_vm._v("Open Vacancies")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row pt-5" },
+      _vm._l(_vm.vacancies, function(vacancy) {
+        return _c(
+          "div",
+          { key: vacancy.id, staticClass: "col-lg-3 col-md-4 col-sm-6 mb-4" },
+          [
+            _c("div", { staticClass: "card" }, [
+              _vm._m(0, true),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("h4", { staticClass: "card-title" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(vacancy.title) +
+                      "\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("i", { staticClass: "fa fa-home" }),
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(vacancy.company) +
+                      "\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("span", { staticClass: "mt-4" }, [
+                  _c("i", { staticClass: "fa fa-thumbtack" }),
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(vacancy.location) +
+                      "\n                    "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "p",
+                { staticClass: "text-center" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-primary btn-sm",
+                      staticStyle: { "border-radius": "4px" },
+                      attrs: {
+                        to: { path: "/vacancies/" + vacancy.id },
+                        type: "button"
+                      }
+                    },
+                    [_vm._v("View Details")]
+                  )
+                ],
+                1
+              )
+            ])
+          ]
+        )
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("h4", { staticClass: "text-center m-2" }, [_vm._v("Open Vacancies")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6 mb-4" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("img", {
-                staticClass: "card-img-top",
-                attrs: { src: "/img/vacancy.jpg", alt: "" }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("h4", { staticClass: "card-title" }, [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Project One")])
-              ]),
-              _vm._v(" "),
-              _c("span", [
-                _c("i", { staticClass: "fa fa-home" }),
-                _vm._v(
-                  "\n                        Company\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("span", { staticClass: "mt-4" }, [
-                _c("i", { staticClass: "fa fa-location-arrow" }),
-                _vm._v(
-                  "\n                        Location\n                    "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-center" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary btn-sm",
-                  staticStyle: { "border-radius": "4px" },
-                  attrs: { type: "button" }
-                },
-                [_vm._v("View Details")]
-              )
-            ])
-          ])
-        ])
-      ])
+    return _c("a", { attrs: { href: "#" } }, [
+      _c("img", {
+        staticClass: "card-img-top",
+        attrs: { src: "/img/vacancy.jpg", alt: "" }
+      })
     ])
   }
 ]
@@ -89585,6 +89678,13 @@ var routes = [{
 }, {
   path: '/vacancies',
   component: __webpack_require__(/*! ./components/User/Vacancy.vue */ "./resources/js/components/User/Vacancy.vue")["default"],
+  meta: {
+    plainLayout: 1,
+    auth: true
+  }
+}, {
+  path: '/vacancies/:vacancyId',
+  component: __webpack_require__(/*! ./components/Admin/VacancyDetails.vue */ "./resources/js/components/Admin/VacancyDetails.vue")["default"],
   meta: {
     plainLayout: 1,
     auth: true

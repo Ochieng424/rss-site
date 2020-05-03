@@ -101,4 +101,22 @@ class VacancyTest extends TestCase
         $response->assertStatus(200);
         Vacancy::where('id', 1)->delete();
     }
+
+    public function testUserCanGetVacancyDetails(){
+        $vacancy = Vacancy::create([
+            'title' => 'Tech lead',
+            'company' => 'Parboil inc',
+            'location' => 'Nairobi',
+            'status' => 'open',
+            'description' => 'lorem ipsum is used!'
+        ]);
+
+        $token = $this->userAuthenticate();
+
+        $response = $this->withHeaders([
+            'Authorization' => 'Bearer '. $token,
+        ])->json('GET', '/api/v1/vacancy/' . 1);
+        $response->assertStatus(200);
+        Vacancy::where('id', 1)->delete();
+    }
 }

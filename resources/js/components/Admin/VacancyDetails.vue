@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-sm-10">
+        <div class="row justify-content-center mt-4">
+            <div :class="$auth.user().role == 'user'? 'col-sm-8' :'col-sm-10'">
                 <p>
                     <button class="btn btn-primary btn-sm" @click="$router.go(-1)">
                         <i class="fa fa-arrow-left"></i>
@@ -38,6 +38,12 @@
                                 <th>Description</th>
                                 <td>{{details.description}}</td>
                             </tr>
+                            <tr v-if="$auth.user().role == 'user'">
+                                <th>Apply</th>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-success">Apply here</button>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -57,7 +63,16 @@
             }
         },
         methods:{
-            getVacancy(){
+            getVacancyUser(){
+                try {
+                    axios.get('/vacancy/' + this.vacancyId).then((data)=>{
+                        this.details = data.data
+                    })
+                }catch (e) {
+                    throw new Error(e);
+                }
+            },
+            getVacancyAdmin(){
                 try {
                     axios.get('/admin/vacancy/' + this.vacancyId).then((data)=>{
                         this.details = data.data
@@ -68,7 +83,13 @@
             }
         },
         mounted() {
-            this.getVacancy();
+            if (this.$auth.user().role == "admin") {
+                this.getVacancyAdmin();
+            }
+
+            if (this.$auth.user().role == "user") {
+                this.getVacancyUser();
+            }
         }
     }
 </script>

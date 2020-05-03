@@ -63,7 +63,13 @@ class VacancyController extends Controller
      */
     public function show($id)
     {
-        return Vacancy::where('id', $id)->firstOrFail();
+        if (auth()->user()->role == "admin") {
+            return Vacancy::where('id', $id)->firstOrFail();
+        }
+
+        if (auth()->user()->role == "user") {
+            return Vacancy::where('id', $id)->where('status', 'open')->firstOrFail();
+        }
     }
 
     /**

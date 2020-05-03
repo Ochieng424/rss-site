@@ -80,6 +80,12 @@ let routes = [
             auth: true
         }
     },
+    {
+        path: '/vacancies/:vacancyId', component: require('./components/Admin/VacancyDetails.vue').default, meta: {
+            plainLayout: 1,
+            auth: true
+        }
+    },
 ];
 
 const router = new VueRouter({

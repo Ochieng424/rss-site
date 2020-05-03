@@ -15,6 +15,7 @@ Route::prefix('v1')->group(function () {
         Route::get('auth/user', 'API\AuthController@user');
         Route::post('auth/logout', 'API\AuthController@logout');
         Route::get('vacancy', 'API\VacancyController@index');
+        Route::get('vacancy/{id}', 'API\VacancyController@show');
 
         Route::group(['middleware' => ['auth.role:admin']], function () {
             Route::prefix('admin')->group(function () {
