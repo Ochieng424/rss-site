@@ -50,6 +50,22 @@ let routes = [
             auth: false
         }
     },
+    {
+        path: '/dashboard/vacancies', component: require('./components/Admin/Vacancy.vue').default, meta: {
+            plainLayout: 2,
+            auth: {
+                roles: 'admin'
+            }
+        }
+    },
+    {
+        path: '/dashboard', component: require('./components/Admin/Index.vue').default, meta: {
+            plainLayout: 2,
+            auth: {
+                roles: 'admin'
+            }
+        }
+    },
 ];
 
 const router = new VueRouter({
@@ -74,6 +90,8 @@ Vue.use(require('@websanova/vue-auth'), {
     auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
     http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
     router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
+    rolesVar: "role",
+    tokenStore: ["localStorage", "cookie"]
 });
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);

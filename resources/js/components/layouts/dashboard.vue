@@ -30,9 +30,15 @@
                             <span>Diggital</span>
                         </li>
                         <li>
-                            <router-link to="/admin/home">
+                            <router-link to="/dashboard">
                                 <i class="fa fa-tachometer-alt"></i>
                                 <span class="menu-text">Dashboard</span>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/dashboard/vacancies">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="menu-text">Vacancies</span>
                             </router-link>
                         </li>
                     </ul>

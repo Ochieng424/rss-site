@@ -27,6 +27,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Profile</a>
                                 <a class="dropdown-item" href="#">My Applications</a>
+                                <router-link v-if="$auth.user().role == 'admin'" to="/dashboard" class="dropdown-item">Dashboard</router-link>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" @click.prevent="$auth.logout()">Logout</a>
                             </div>
