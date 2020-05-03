@@ -74,6 +74,12 @@ let routes = [
             }
         }
     },
+    {
+        path: '/vacancies', component: require('./components/User/Vacancy.vue').default, meta: {
+            plainLayout: 1,
+            auth: true
+        }
+    },
 ];
 
 const router = new VueRouter({

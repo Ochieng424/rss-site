@@ -16,7 +16,13 @@ class VacancyController extends Controller
      */
     public function index()
     {
-        return Vacancy::latest()->get();
+        if (auth()->user()->role == "admin") {
+            return Vacancy::latest()->get();
+        }
+
+        if (auth()->user()->role == "user") {
+            return Vacancy::latest()->where('status', 'open')->get();
+        }
     }
 
     /**

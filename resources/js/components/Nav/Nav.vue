@@ -15,7 +15,7 @@
                             <router-link to="/" class="nav-link">Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Vacancies</a>
+                            <router-link to="/vacancies" class="nav-link">Vacancies</router-link>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">

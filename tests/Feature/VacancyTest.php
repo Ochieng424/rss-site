@@ -29,6 +29,17 @@ class VacancyTest extends TestCase
         return $token;
     }
 
+    protected function userAuthenticate(){
+        $user = User::create([
+            'name' => 'test',
+            'email' => 'test@gmail.com',
+            'role' => 'user',
+            'password' => bcrypt('secret1234'),
+        ]);
+        $token = JWTAuth::fromUser($user);
+        return $token;
+    }
+
     public function testAdminCanPostVacancy()
     {
         $token = $this->authenticate();
@@ -70,5 +81,24 @@ class VacancyTest extends TestCase
             'Authorization' => 'Bearer '. $token,
         ])->json('GET', '/api/v1/admin/vacancy/' . 1);
         $response->assertStatus(200);
+        Vacancy::where('id', 1)->delete();
+    }
+
+    public function testUserCanGetOpenVacancies(){
+        $vacancy = Vacancy::create([
+            'title' => 'Tech lead',
+            'company' => 'Parboil inc',
+            'location' => 'Nairobi',
+            'status' => 'open',
+            'description' => 'lorem ipsum is used!'
+        ]);
+
+        $token = $this->userAuthenticate();
+
+        $response = $this->withHeaders([
+            'Authorization' => 'Bearer '. $token,
+        ])->json('GET', '/api/v1/vacancy');
+        $response->assertStatus(200);
+        Vacancy::where('id', 1)->delete();
     }
 }
