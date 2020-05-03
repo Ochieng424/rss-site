@@ -3818,20 +3818,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Vacancy",
   data: function data() {
     return {
-      vacancies: []
+      vacancies: [],
+      feeds: ''
     };
   },
   methods: {
-    getOpenVacancies: function getOpenVacancies() {
+    feed: function feed() {
       var _this = this;
+
+      var Url = window.location.origin;
+      window.open(Url + "/api/v1/feed", "_blank");
+
+      try {
+        axios.get('/feed').then(function (data) {
+          _this.feeds = data.data;
+        });
+      } catch (e) {
+        throw new Error(e);
+      }
+    },
+    getOpenVacancies: function getOpenVacancies() {
+      var _this2 = this;
 
       try {
         axios.get('/vacancy').then(function (data) {
-          _this.vacancies = data.data;
+          _this2.vacancies = data.data;
         });
       } catch (e) {
         throw new Error(e);
@@ -73933,7 +73953,24 @@ var render = function() {
         )
       }),
       0
-    )
+    ),
+    _vm._v(" "),
+    _c("div", [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-outline-success",
+          attrs: { type: "button" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.feed($event)
+            }
+          }
+        },
+        [_c("i", { staticClass: "fa fa-rss" })]
+      )
+    ])
   ])
 }
 var staticRenderFns = [

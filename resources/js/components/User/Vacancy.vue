@@ -25,6 +25,11 @@
                 </div>
             </div>
         </div>
+        <div>
+            <button type="button" class="btn btn-outline-success" @click.prevent="feed">
+                <i class="fa fa-rss"></i>
+            </button>
+        </div>
     </div>
 </template>
 
@@ -33,10 +38,22 @@
         name: "Vacancy",
         data(){
             return{
-                vacancies: []
+                vacancies: [],
+                feeds: ''
             }
         },
         methods:{
+            feed(){
+                let Url = window.location.origin;
+                window.open(Url + "/api/v1/feed", "_blank");
+                try {
+                    axios.get('/feed').then((data)=>{
+                        this.feeds = data.data
+                    })
+                }catch (e) {
+                    throw new Error(e);
+                }
+            },
             getOpenVacancies(){
                 try {
                     axios.get('/vacancy').then((data)=>{
