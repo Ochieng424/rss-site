@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\User;
+use App\Vacancy;
 use Illuminate\Http\Request;
 
 class VacancyController extends Controller
@@ -32,6 +34,19 @@ class VacancyController extends Controller
             'status' => 'required|string',
             'description' => 'required|string',
         ]);
+
+        $vacancy = new Vacancy();
+        $vacancy->title = $request->title;
+        $vacancy->company = $request->company;
+        $vacancy->location = $request->location;
+        $vacancy->status = $request->status;
+        $vacancy->description = $request->description;
+        $vacancy->save();
+
+        return response([
+            'status' => 'success',
+            'data' => $vacancy
+        ], 200);
     }
 
     /**

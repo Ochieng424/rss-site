@@ -3232,7 +3232,11 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.isLoading = true;
-      axios.post('/admin/vacancy', this.form).then(function () {})["catch"](function (resp) {
+      axios.post('/admin/vacancy', this.form).then(function () {
+        _this.isLoading = false;
+        swal.fire('Posted!', 'Vacancy posted successfully!', 'success');
+        $('#new-modal').modal('hide');
+      })["catch"](function (resp) {
         _this.isLoading = false;
         _this.error = true;
         _this.errors = resp.response.data.errors;

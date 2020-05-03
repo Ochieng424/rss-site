@@ -89,7 +89,13 @@
             postVacancy() {
                 this.isLoading = true;
                 axios.post('/admin/vacancy', this.form).then(() => {
-
+                    this.isLoading = false;
+                    swal.fire(
+                        'Posted!',
+                        'Vacancy posted successfully!',
+                        'success'
+                    )
+                    $('#new-modal').modal('hide');
                 }).catch((resp) => {
                     this.isLoading = false;
                     this.error = true;
@@ -97,7 +103,7 @@
                 })
             },
             newModal() {
-                $('#new-modal').modal('show')
+                $('#new-modal').modal('show');
             }
         }
     }
