@@ -57,7 +57,7 @@ class VacancyController extends Controller
      */
     public function show($id)
     {
-        //
+        return Vacancy::where('id', $id)->firstOrFail();
     }
 
     /**

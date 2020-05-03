@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\User;
+use App\Vacancy;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
@@ -51,6 +52,23 @@ class VacancyTest extends TestCase
         $response = $this->withHeaders([
             'Authorization' => 'Bearer '. $token,
         ])->json('GET', '/api/v1/admin/vacancy');
+        $response->assertStatus(200);
+    }
+
+    public function testAdminCanGetVacancyDetails(){
+        $vacancy = Vacancy::create([
+            'title' => 'Tech lead',
+            'company' => 'Parboil inc',
+            'location' => 'Nairobi',
+            'status' => 'open',
+            'description' => 'lorem ipsum is used!'
+        ]);
+
+        $token = $this->authenticate();
+
+        $response = $this->withHeaders([
+            'Authorization' => 'Bearer '. $token,
+        ])->json('GET', '/api/v1/admin/vacancy/' . 1);
         $response->assertStatus(200);
     }
 }
