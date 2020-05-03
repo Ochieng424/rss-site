@@ -89787,7 +89787,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 Vue.use(vue_axios__WEBPACK_IMPORTED_MODULE_2___default.a, axios__WEBPACK_IMPORTED_MODULE_1___default.a);
-axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.baseURL = 'http://127.0.0.1:8000/api/v1'; // VueRouter
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.baseURL = 'https://rss.diggital.co.ke/api/v1'; // VueRouter
 
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]); // sweetalert

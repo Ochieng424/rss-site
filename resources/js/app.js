@@ -13,7 +13,7 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 
 Vue.use(VueAxios, axios);
-axios.defaults.baseURL = 'http://127.0.0.1:8000/api/v1';
+axios.defaults.baseURL = 'https://rss.diggital.co.ke/api/v1';
 
 // VueRouter
 import VueRouter from 'vue-router';
