@@ -8,40 +8,45 @@
             <div class="modal-dialog">
                 <div class="modal-content p-4">
                     <h5>Post Vacancy</h5>
-                    <form>
+                    <form @submit.prevent="postVacancy">
                         <div class="form-group">
-                            <label class="float-left">Job Title</label>
+                            <label>Job Title</label>
                             <input v-model="form.title" type="text" class="form-control" placeholder="Title">
-                            <small class="float-left" style="color: red" v-if="error && errors.title">{{ errors.title[0]
+                            <small style="color: red" v-if="error && errors.title">{{ errors.title[0]
                                 }}</small>
                         </div>
                         <div class="form-group">
-                            <label class="float-left">Company</label>
+                            <label>Company</label>
                             <input v-model="form.company" type="text" class="form-control" placeholder="Company">
-                            <small class="float-left" style="color: red" v-if="error && errors.company">{{
+                            <small style="color: red" v-if="error && errors.company">{{
                                 errors.company[0]
                                 }}</small>
                         </div>
                         <div class="form-group">
-                            <label class="float-left">Job Location</label>
+                            <label>Job Location</label>
                             <input v-model="form.location" type="text" class="form-control" placeholder="Location">
-                            <small class="float-left" style="color: red" v-if="error && errors.location">{{
+                            <small style="color: red" v-if="error && errors.location">{{
                                 errors.location[0]
                                 }}</small>
                         </div>
                         <div class="form-group">
                             <label>Status</label>
                             <select v-model="form.status" class="form-control">
-                                <option value="" selected="true" >--Status--</option>
+                                <option value="" selected="true">--Status--</option>
                                 <option value="open">Open</option>
                                 <option value="closed">Closed</option>
                             </select>
-                            <small class="float-left" style="color: red" v-if="error && errors.status">{{ errors.status[0]
+                            <small style="color: red" v-if="error && errors.status">{{
+                                errors.status[0]
                                 }}</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Job description</label>
-                            <textarea v-model="form.description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label>Job description</label>
+                            <textarea v-model="form.description" class="form-control"
+                                      rows="3"></textarea>
+                            <small style="color: red" v-if="error && errors.description">{{
+                                errors.description[0]
+                                }}</small>
                         </div>
                         <button type="submit" class="btn btn-primary">Post</button>
                     </form>
@@ -81,6 +86,16 @@
             }
         },
         methods: {
+            postVacancy() {
+                this.isLoading = true;
+                axios.post('/admin/vacancy', this.form).then(() => {
+
+                }).catch((resp) => {
+                    this.isLoading = false;
+                    this.error = true;
+                    this.errors = resp.response.data.errors;
+                })
+            },
             newModal() {
                 $('#new-modal').modal('show')
             }

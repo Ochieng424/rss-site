@@ -3200,6 +3200,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
  // Import stylesheet
 
 
@@ -3223,6 +3228,16 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    postVacancy: function postVacancy() {
+      var _this = this;
+
+      this.isLoading = true;
+      axios.post('/admin/vacancy', this.form).then(function () {})["catch"](function (resp) {
+        _this.isLoading = false;
+        _this.error = true;
+        _this.errors = resp.response.data.errors;
+      });
+    },
     newModal: function newModal() {
       $('#new-modal').modal('show');
     }
@@ -43129,218 +43144,209 @@ var render = function() {
           _c("div", { staticClass: "modal-content p-4" }, [
             _c("h5", [_vm._v("Post Vacancy")]),
             _vm._v(" "),
-            _c("form", [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { staticClass: "float-left" }, [
-                  _vm._v("Job Title")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.title,
-                      expression: "form.title"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", placeholder: "Title" },
-                  domProps: { value: _vm.form.title },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "title", $event.target.value)
-                    }
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.postVacancy($event)
                   }
-                }),
-                _vm._v(" "),
-                _vm.error && _vm.errors.title
-                  ? _c(
-                      "small",
-                      {
-                        staticClass: "float-left",
-                        staticStyle: { color: "red" }
-                      },
-                      [_vm._v(_vm._s(_vm.errors.title[0]))]
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { staticClass: "float-left" }, [_vm._v("Company")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.company,
-                      expression: "form.company"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", placeholder: "Company" },
-                  domProps: { value: _vm.form.company },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "company", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.error && _vm.errors.company
-                  ? _c(
-                      "small",
-                      {
-                        staticClass: "float-left",
-                        staticStyle: { color: "red" }
-                      },
-                      [_vm._v(_vm._s(_vm.errors.company[0]))]
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { staticClass: "float-left" }, [
-                  _vm._v("Job Location")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.location,
-                      expression: "form.location"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", placeholder: "Location" },
-                  domProps: { value: _vm.form.location },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "location", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.error && _vm.errors.location
-                  ? _c(
-                      "small",
-                      {
-                        staticClass: "float-left",
-                        staticStyle: { color: "red" }
-                      },
-                      [_vm._v(_vm._s(_vm.errors.location[0]))]
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Status")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
+                }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Job Title")]),
+                  _vm._v(" "),
+                  _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.form.status,
-                        expression: "form.status"
+                        value: _vm.form.title,
+                        expression: "form.title"
                       }
                     ],
                     staticClass: "form-control",
+                    attrs: { type: "text", placeholder: "Title" },
+                    domProps: { value: _vm.form.title },
                     on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.form,
-                          "status",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "title", $event.target.value)
                       }
                     }
-                  },
-                  [
-                    _c("option", { attrs: { value: "", selected: "true" } }, [
-                      _vm._v("--Status--")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "open" } }, [
-                      _vm._v("Open")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "closed" } }, [
-                      _vm._v("Closed")
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _vm.error && _vm.errors.status
-                  ? _c(
-                      "small",
-                      {
-                        staticClass: "float-left",
-                        staticStyle: { color: "red" }
-                      },
-                      [_vm._v(_vm._s(_vm.errors.status[0]))]
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
-                  _vm._v("Job description")
+                  }),
+                  _vm._v(" "),
+                  _vm.error && _vm.errors.title
+                    ? _c("small", { staticStyle: { color: "red" } }, [
+                        _vm._v(_vm._s(_vm.errors.title[0]))
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.description,
-                      expression: "form.description"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { id: "exampleFormControlTextarea1", rows: "3" },
-                  domProps: { value: _vm.form.description },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Company")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.company,
+                        expression: "form.company"
                       }
-                      _vm.$set(_vm.form, "description", $event.target.value)
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", placeholder: "Company" },
+                    domProps: { value: _vm.form.company },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "company", $event.target.value)
+                      }
                     }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                [_vm._v("Post")]
-              )
-            ])
+                  }),
+                  _vm._v(" "),
+                  _vm.error && _vm.errors.company
+                    ? _c("small", { staticStyle: { color: "red" } }, [
+                        _vm._v(_vm._s(_vm.errors.company[0]))
+                      ])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Job Location")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.location,
+                        expression: "form.location"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", placeholder: "Location" },
+                    domProps: { value: _vm.form.location },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "location", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.error && _vm.errors.location
+                    ? _c("small", { staticStyle: { color: "red" } }, [
+                        _vm._v(_vm._s(_vm.errors.location[0]))
+                      ])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Status")]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.status,
+                          expression: "form.status"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.form,
+                            "status",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        }
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "", selected: "true" } }, [
+                        _vm._v("--Status--")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "open" } }, [
+                        _vm._v("Open")
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "closed" } }, [
+                        _vm._v("Closed")
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm.error && _vm.errors.status
+                    ? _c("small", { staticStyle: { color: "red" } }, [
+                        _vm._v(_vm._s(_vm.errors.status[0]))
+                      ])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Job description")]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.description,
+                        expression: "form.description"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { rows: "3" },
+                    domProps: { value: _vm.form.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "description", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.error && _vm.errors.description
+                    ? _c("small", { staticStyle: { color: "red" } }, [
+                        _vm._v(_vm._s(_vm.errors.description[0]))
+                      ])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+                  [_vm._v("Post")]
+                )
+              ]
+            )
           ])
         ])
       ]
