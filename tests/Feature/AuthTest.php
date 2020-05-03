@@ -45,5 +45,8 @@ class AuthTest extends TestCase
 
         $response = $this->json('POST','/api/v1/auth/login', $data);
         $response->assertStatus(200);
+        $response->assertHeader('Authorization', $value = null);
+
+        User::where('email','test@gmail.com')->delete();
     }
 }
